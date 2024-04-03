@@ -26,7 +26,8 @@ class ModelArguments:
     model_name_or_path: str = field(
         metadata={"help": "Path to pretrained model or model identifier from huggingface.co/models"}
     )
-    my_model_name_or_path: str = field(default=None, metadata={"help": "自定义的模型权重"})
+    num_local_experts: Optional[int] = field(default=8, metadata={"help": "自定义专家数量"})
+    num_experts_per_tok: Optional[int] = field(default=2, metadata={"help": "自定义每个token经过的专家数量"})
     model_type: Optional[str] = field(
         default=None,
         metadata={"help": "If training from scratch, pass a model type from the list: " + ", ".join(MODEL_TYPES)},
@@ -104,7 +105,7 @@ class ModelArguments:
             )
 
 @dataclass
-class DataTrainingArguments:
+class DataArguments:
     """
     Arguments pertaining to what data we are going to input our model for training and eval.
     """
@@ -114,6 +115,10 @@ class DataTrainingArguments:
     )
     dataset_config_name: Optional[str] = field(
         default=None, metadata={"help": "The configuration name of the dataset to use (via the datasets library)."}
+    )
+    
+    template: Optional[str] = field(
+        default="qwen", metadata={"help": "The name of the template, such as 'qwen'"}
     )
     train_file: Optional[str] = field(default=None, metadata={"help": "The input training data file (a text file)."})
     validation_file: Optional[str] = field(

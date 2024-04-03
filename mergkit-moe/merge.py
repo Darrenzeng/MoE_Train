@@ -1,9 +1,9 @@
-
-
 import sys
 import os
 import re
 import shutil
+import torch
+import json
 
 import debugpy
 try:
@@ -21,7 +21,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.join(current_dir, '..')
 sys.path.append(parent_dir)
 
-from finetune.arguments import ModelArguments, DataTrainingArguments, \
+from hparams.arguments import ModelArguments, DataTrainingArguments, \
     RetrieverTrainingArguments as TrainingArguments
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
 # from MoE.qwen2moe.models.modeling_qwen2moe import Qwen2ForCausalLM
@@ -180,9 +180,15 @@ def save_model(training_args, moe_model):
         "AutoModelForCausalLM": "modeling_qwen2moe.Qwen2MoEForCausalLM"
     }
 
-    moe_model.save_pretrained(training_args.output_dir)
+    # moe_model.save_pretrained(training_args.output_dir)
     # qwen2_moe_config.save_pretrained(output_dir)
     tokenizer.save_pretrained(training_args.output_dir)
+    torch.save(moe_model.state_dict(), os.path.join(training_args.output_dir, "model_weights.pth"))
+    
+    config_json = json.loads(moe_model.config.to_json_string())
+    formatted_dict = json.dumps(config_json, indent=2)
+    with open(os.path.join(training_args.output_dir,"config.json"), "w") as f:
+        f.write(formatted_dict)
 
     # copy src.modeling_qwen2_moe.py / src.configuration_qwen2_moe.py to output_dir
     shutil.copy("/Users/a58/Downloads/my_test/my_train/models/configuration_qwen2moe.py", training_args.output_dir)
@@ -199,14 +205,15 @@ if __name__=="__main__":
     else:
         model_args, data_args, training_args = parser.parse_args_into_dataclasses()
     
-    model = AutoModelForCausalLM.from_pretrained(model_args.model_name_or_path)
+    model = AutoModelForCausalLM.from_pretrained(model_args.model_name_or_path,torch_dtype=torch.float16)
     tokenizer = AutoTokenizer.from_pretrained(model_args.model_name_or_path)
     model_config = model.config
     
     # 1. 初始化自定义的模型,并把config进行修改
     # model_config = AutoConfig.from_pretrained(model_args.my_model_name_or_path)
-    model_moe_config = convert_qwen2config_to_qwen2moeconfig(model_config)
-    moe_model = Qwen2MoEForCausalLM(model_moe_config)
+    model_moe_config = convert_qwen2config_to_qwen2moeconfig(model_config, num_local_experts=model_args.num_local_experts, num_experts_per_tok=model_args.num_experts_per_tok)
+    moe_model = Qwen2MoEForCausalLM(model_moe_config).half()
+
     
     print("MoE model config: ", model_moe_config.to_json_string())
 

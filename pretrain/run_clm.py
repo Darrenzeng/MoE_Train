@@ -5,13 +5,13 @@ try:
     print("Waiting for debugger attach")
     debugpy.wait_for_client()
 except Exception as e:
-    pass
+    print("debugger attach failed")
 
 import logging
 import math
 import os
-import re
 import sys
+sys.path.append("/Users/a58/Downloads/my_test")
 import warnings
 from dataclasses import dataclass, field
 from itertools import chain
@@ -34,20 +34,15 @@ from transformers import (
     is_torch_tpu_available,
     set_seed,
 )
+
 from transformers.testing_utils import CaptureLogger
 from transformers.trainer_utils import get_last_checkpoint
 from transformers.utils import check_min_version, send_example_telemetry
 
-from trainer import MyTrainer as Trainer
-from arguments import ModelArguments, DataTrainingArguments, \
+from pretrain.trainer import MyTrainer as Trainer
+from hparams.arguments import ModelArguments, DataTrainingArguments, \
     RetrieverTrainingArguments as TrainingArguments
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
-# from MoE.qwen2moe.models.modeling_qwen2moe import Qwen2ForCausalLM
-# from MoE.qwen2moe.models.configuration_qwen2moe import Qwen2Config
-from ..models.configuration_qwen2moe import Qwen2Config
-from ..models.modeling_qwen2moe import Qwen2ForCausalLM
-from accelerate import init_empty_weights
-
 
 logger = logging.getLogger(__name__)
 
@@ -105,14 +100,6 @@ def main():
     # Set seed before initializing model.
     set_seed(training_args.seed)
 
-    # Get the datasets: you can either provide your own CSV/JSON/TXT training and evaluation files (see below)
-    # or just provide the name of one of the public datasets available on the hub at https://huggingface.co/datasets/
-    # (the dataset will be downloaded automatically from the datasets Hub).
-    #
-    # For CSV/JSON files, this script will use the column called 'text' or the first column if no column called
-    # 'text' is found. You can easily tweak this behavior (see below).
-    #
-    # In distributed training, the load_dataset function guarantee that only one local process can concurrently
     # download the dataset. 数据处理
     if data_args.dataset_name is not None:
         # Downloading and loading a dataset from the hub.
@@ -181,13 +168,6 @@ def main():
                 **dataset_args,
             )
 
-    # See more about loading any type of standard or custom dataset (from files, python dict, pandas DataFrame, etc) at
-    # https://huggingface.co/docs/datasets/loading_datasets.
-
-    # Load pretrained model and tokenizer
-    #
-    # Distributed training:
-    # The .from_pretrained methods guarantee that only one local process can concurrently
     # download model & vocab.
 
     config_kwargs = {
@@ -231,7 +211,7 @@ def main():
             if model_args.torch_dtype in ["auto", None]
             else getattr(torch, model_args.torch_dtype)
         )
-        model_raw = AutoModelForCausalLM.from_pretrained(
+        model = AutoModelForCausalLM.from_pretrained(
             model_args.model_name_or_path,
             from_tf=bool(".ckpt" in model_args.model_name_or_path),
             config=config,
@@ -243,38 +223,9 @@ def main():
             low_cpu_mem_usage=model_args.low_cpu_mem_usage,
         )
     else:
-        model_raw = AutoModelForCausalLM.from_config(config, trust_remote_code=model_args.trust_remote_code)
+        model = AutoModelForCausalLM.from_config(config, trust_remote_code=model_args.trust_remote_code)
         n_params = sum({p.data_ptr(): p.numel() for p in model.parameters()}.values())
         logger.info(f"Training new model from scratch - Total size={n_params/2**20:.2f}M params")
-
-    #########复制权重#############
-    
-    # 1. 初始化自定义的模型
-    model2_config = AutoConfig.from_pretrained(model_args.my_model_name_or_path, **config_kwargs)
-    with init_empty_weights():
-        model = Qwen2ForCausalLM(model2_config)
-
-    
-    # 2. 复制模型参数
-    # 复制embed_tokens层
-    model.model.embed_tokens.load_state_dict(model_raw.model.embed_tokens.state_dict())
-    for layer in range(model2_config.num_hidden_layers):
-        # 复制layers.self_attn层
-        model.model.layers[layer].self_attn.load_state_dict(model_raw.model.layers[layer].self_attn.state_dict())
-        # 复制moe层(gate随机初始化，其他线性层需要复制)
-        for expert in range(model2_config.num_local_experts):
-            model.model.layers[layer].block_sparse_moe.experts[expert].w1.load_state_dict(model_raw.model.layers[layer].mlp.gate_proj.state_dict())
-            model.model.layers[layer].block_sparse_moe.experts[expert].w2.load_state_dict(model_raw.model.layers[layer].mlp.down_proj.state_dict())
-            model.model.layers[layer].block_sparse_moe.experts[expert].w3.load_state_dict(model_raw.model.layers[layer].mlp.up_proj.state_dict())
-            model.model.layers[layer].block_sparse_moe.experts[expert].act_fn.load_state_dict(model_raw.model.layers[layer].mlp.act_fn.state_dict())
-        # 复制input_layernorm层
-        model.model.layers[layer].input_layernorm.load_state_dict(model_raw.model.layers[layer].input_layernorm.state_dict())
-        # 复制post_attention_layernorm层
-        model.model.layers[layer].post_attention_layernorm.load_state_dict(model_raw.model.layers[layer].post_attention_layernorm.state_dict())
-    # 复制lm_head层
-    model.lm_head.load_state_dict(model_raw.lm_head.state_dict())
-    del model_raw
-    #！！！！！！！！！！！！！！！！！
 
     # We resize the embeddings only when necessary to avoid index errors. If you are creating a model from scratch
     # on a small vocab and want a smaller embedding size, remove this test.
@@ -480,10 +431,6 @@ def main():
         else:
             kwargs["dataset"] = data_args.dataset_name
 
-    if training_args.push_to_hub:
-        trainer.push_to_hub(**kwargs)
-    else:
-        trainer.create_model_card(**kwargs)
 
 
 def _mp_fn(index):

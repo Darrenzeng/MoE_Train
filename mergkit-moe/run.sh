@@ -1,6 +1,5 @@
-python /Users/a58/Downloads/my_test/my_train/mergit-moe/mergit.py \
+python /Users/a58/Downloads/MoE_Train/mergkit-moe/merge.py \
     --model_name_or_path /Users/a58/Downloads/pretrain_model/Qwen/Qwen1.5-0.5B-Chat \
-    --my_model_name_or_path /Users/a58/Downloads/my_test/MoE/mymoe_qwen/docs\
     --do_train True \
     --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 1 \
