@@ -15,4 +15,10 @@ python /Users/a58/Downloads/MoE_Train/finetune/run.py \
     --logging_strategy   steps  \
     --logging_steps   10  \
     --trust_remote_code True \
-    --template qwen
+    --template qwen \
+    --q_lora False \
+    --use_lora True \
+    --lora_r 8 \
+    --lora_alpha 32 \
+    --lora_dropout 0.05 \
+    --lora_target_modules q_proj v_proj

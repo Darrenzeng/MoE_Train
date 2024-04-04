@@ -1,17 +1,18 @@
-# import debugpy
-# try:
-#     # 5678 is the default attach port in the VS Code debug configurations. Unless a host and port are specified, host defaults to 127.0.0.1
-#     debugpy.listen(("localhost", 9501))
-#     print("Waiting for debugger attach")
-#     debugpy.wait_for_client()
-# except Exception as e:
-#     pass
+import debugpy
+try:
+    # 5678 is the default attach port in the VS Code debug configurations. Unless a host and port are specified, host defaults to 127.0.0.1
+    debugpy.listen(("localhost", 9501))
+    print("Waiting for debugger attach")
+    debugpy.wait_for_client()
+except Exception as e:
+    pass
 import logging
 import os
 import torch
 from pathlib import Path
 
 from transformers import AutoConfig, AutoTokenizer, AutoModelForCausalLM
+from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from transformers import (
     HfArgumentParser,
     set_seed,
@@ -70,6 +71,7 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(
         model_args.tokenizer_name if model_args.tokenizer_name else model_args.model_name_or_path,
         cache_dir=model_args.cache_dir,
+        trust_remote_code=True,
         use_fast=False,
     )
     config = AutoConfig.from_pretrained(
@@ -80,6 +82,32 @@ def main():
     logger.info('Config: %s', config)
 
     model = AutoModelForCausalLM.from_pretrained(model_args.model_name_or_path, config = config, trust_remote_code=True)#, torch_dtype=torch.bfloat16
+
+    if training_args.use_lora:
+        world_size = int(os.environ.get("WORLD_SIZE", 1))
+        ddp = world_size != 1
+        lora_config = LoraConfig(
+            r=training_args.lora_r,
+            lora_alpha=training_args.lora_alpha,
+            target_modules=training_args.lora_target_modules,
+            lora_dropout=training_args.lora_dropout,
+            bias=training_args.lora_bias,
+            task_type="CAUSAL_LM",
+        )
+
+        if training_args.q_lora:
+            model = prepare_model_for_kbit_training(
+                model,
+                use_gradient_checkpointing=training_args.gradient_checkpointing
+            )
+            if not ddp and torch.cuda.device_count() > 1:
+                # keeps Trainer from trying its own DataParallelism when more than 1 gpu is available
+                model.is_parallelizable = True
+                model.model_parallel = True
+
+        model = get_peft_model(model, lora_config)
+        if training_args.deepspeed is not None and training_args.local_rank == 0:
+            model.print_trainable_parameters()
 
     if training_args.fix_position_embedding:
         for k, v in model.named_parameters():

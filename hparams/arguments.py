@@ -1,6 +1,6 @@
 import os
 from dataclasses import dataclass, field
-from typing import Optional
+from typing import Optional, List, Union
 from transformers.utils import check_min_version
 
 
@@ -194,3 +194,14 @@ class RetrieverTrainingArguments(TrainingArguments):
     sentence_pooling_method: str = field(default='cls', metadata={"help": "the pooling method, should be cls or mean"})
     normlized: bool = field(default=True)
     use_inbatch_neg: bool = field(default=True, metadata={"help": "use passages in the same batch as negatives"})
+    #lora配置
+    q_lora: Optional[bool] = field(default=False)
+    use_lora: Optional[bool] = field(default=False)
+    lora_r: Optional[int] = field(default=8)
+    lora_alpha: Optional[int] = field(default=32)
+    lora_target_modules: List[str] = field(
+        default_factory=lambda: ["q_proj", "v_proj"])
+    lora_dropout: Optional[float] = field(default=0.05)
+    lora_bias: Optional[str] = field(default="none")
+    
+    
