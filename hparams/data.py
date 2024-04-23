@@ -24,42 +24,52 @@ class TrainDatasetForSft(Dataset):
             tokenizer: PreTrainedTokenizer
     ):
         #有多个文件的时候，对每个文件进行处理
-        if os.path.isdir(args.train_file):
-            train_filesets = []
-            for file in os.listdir(args.train_file):
-                temp_dataset = datasets.load_dataset('json', data_files=os.path.join(args.train_file, file),
-                                                     split='train')
-                if len(temp_dataset) > args.max_example_num_per_dataset:
-                    temp_dataset = temp_dataset.select(
-                        random.sample(list(range(len(temp_dataset))), args.max_example_num_per_dataset))
-                train_filesets.append(temp_dataset)
-            self.dataset = datasets.concatenate_datasets(train_filesets)
-        else:
-            self.dataset = datasets.load_dataset('json', data_files=args.train_file, split='train')
-
+        if args.train_file:
+            if os.path.isdir(args.train_file):
+                train_filesets = []
+                for file in os.listdir(args.train_file):
+                    temp_dataset = datasets.load_dataset('json', data_files=os.path.join(args.train_file, file),
+                                                        split='train')
+                    if len(temp_dataset) > args.max_example_num_per_dataset:
+                        temp_dataset = temp_dataset.select(
+                            random.sample(list(range(len(temp_dataset))), args.max_example_num_per_dataset))
+                    train_filesets.append(temp_dataset)
+                self.dataset = datasets.concatenate_datasets(train_filesets)
+            else:
+                self.dataset = datasets.load_dataset('json', data_files=args.train_file, split='train')
+        elif args.validation_file:
+            self.dataset = datasets.load_dataset('json', data_files=args.validation_file, split='train')
+        
         self.tokenizer = tokenizer
         self.args = args
         self.total_len = len(self.dataset)
+        
+        #提前处理好数据
+        self.dataset = self.dataset.map(self.process_fn, batched=True, batch_size=128, num_proc=4, remove_columns=self.dataset.column_names)    
 
     def __len__(self):
         return self.total_len
 
-    def __getitem__(self, item) -> Tuple[str, List[str]]:
+    def process_fn(self, example):
         """思路：如果是llama格式，则直接拼接instruction和input（包括qwen）
                 如果是gpt格式，以conversation对话形式存在
         """
-        if "conversations" in self.dataset[item]:
-            conversations = self.dataset[item]['conversations']
-            query = None
-            label = None
-            
-        else:
-            query = self.dataset[item]['instruction'] + self.dataset[item]['input']
-            label = self.dataset[item]['output']
+        result = {"instruction":[], "input":[], "output":[]}
+        for idx in range(len(example['input'])):
+            query = example['instruction'][idx] + example['input'][idx]
+            label = example['output'][idx]
             #需要调用模板，对query进行处理
             template = get_template_and_fix_tokenizer(self.tokenizer, name=self.args.template)
             query = add_prompt_form_template(template=template, query=query)
-
+            result["instruction"].append(query)
+            result["input"].append("")
+            result["output"].append(label)
+        return result
+        
+    def __getitem__(self, item) -> Tuple[str, List[str]]:
+        query = self.dataset[item]['instruction']
+        label = self.dataset[item]['output']
+        
         return query, label
 
 
@@ -72,6 +82,7 @@ class CustomCollator(DataCollatorWithPadding):
     """
     query_max_len: int = 32
     label_max_len: int = 128
+    args: DataArguments = None
 
     # def padding_score(self, teacher_score):
     #     group_size = None
@@ -119,9 +130,14 @@ class CustomCollator(DataCollatorWithPadding):
             source_mask = [IGNORE_INDEX] * len(input_ids)
             input_ids = input_ids.tolist()
             label_ids = label_ids.tolist()
-            model_inputs["input_ids"].append(torch.tensor(input_ids + label_ids + [self.tokenizer.eos_token_id]))
+            if self.args.train_file:
+                model_inputs["input_ids"].append(torch.tensor(input_ids + label_ids + [self.tokenizer.eos_token_id]))
+                model_inputs["labels"].append(torch.tensor(source_mask + label_ids + [self.tokenizer.eos_token_id]))
+            elif self.args.validation_file:
+                model_inputs["input_ids"].append(torch.tensor(input_ids))
+                model_inputs["labels"].append(torch.tensor(label_ids))
             model_inputs["attention_mask"].append([1]*len(input_ids))
-            model_inputs["labels"].append(torch.tensor(source_mask + label_ids + [self.tokenizer.eos_token_id]))
+            
             assert len(torch.tensor(input_ids + label_ids + [self.tokenizer.eos_token_id])) == len(source_mask + label_ids + [self.tokenizer.eos_token_id]), "长度不一致"
         
         model_inputs["input_ids"] = torch.stack(model_inputs["input_ids"])

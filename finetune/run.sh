@@ -1,19 +1,22 @@
 python /Users/a58/Downloads/MoE_Train/finetune/run.py \
     --model_name_or_path /Users/a58/Downloads/pretrain_model/Qwen/Qwen1.5-0.5B-Chat \
     --do_train True \
-    --per_device_train_batch_size 2 \
+    --per_device_train_batch_size 4 \
     --gradient_accumulation_steps 1 \
     --learning_rate 5e-5 \
     --weight_decay 0 \
     --max_grad_norm 1.0 \
     --num_train_epochs 1.0 \
     --block_size 32 \
-    --train_file /Users/a58/Downloads/my_test/data/pre_train/train_for_sft_test.json \
-    --output_dir /Users/a58/Downloads/my_test/my_train/outputs \
+    --train_file /Users/a58/Downloads/my_test/data/data_sft/renting_data_train_7000_improved_prompting3.json \
+    --output_dir /Users/a58/Downloads/MoE_Train/outputs \
     --overwrite_output_dir \
-    --logging_dir /Users/a58/Downloads/my_test/data/pre_train  \
+    --logging_dir /Users/a58/Downloads/MoE_Train/outputs  \
+    --save_strategy epoch \
+    --save_total_limit 1 \
     --logging_strategy   steps  \
-    --logging_steps   10  \
+    --logging_steps   1  \
+    --report_to wandb \
     --trust_remote_code True \
     --template qwen \
     --q_lora False \
@@ -21,4 +24,4 @@ python /Users/a58/Downloads/MoE_Train/finetune/run.py \
     --lora_r 8 \
     --lora_alpha 32 \
     --lora_dropout 0.05 \
-    --lora_target_modules q_proj v_proj
+    --lora_target_modules q_proj v_proj k_proj o_proj gate_proj down_proj up_proj

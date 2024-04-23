@@ -1,17 +1,20 @@
 import debugpy
 try:
     # 5678 is the default attach port in the VS Code debug configurations. Unless a host and port are specified, host defaults to 127.0.0.1
-    debugpy.listen(("localhost", 9501))
+    debugpy.listen(("localhost", 9503))
     print("Waiting for debugger attach")
     debugpy.wait_for_client()
 except Exception as e:
-    pass
+    print("启动debug失败")
 import logging
 import os
+os.environ["WANDB_PROJECT"]="Moe_finetuning"
+# os.environ["WANDB_DISABLED"] = "true"
 import torch
+import wandb
 from pathlib import Path
 
-from transformers import AutoConfig, AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoConfig, AutoTokenizer, AutoModelForCausalLM, default_data_collator
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from transformers import (
     HfArgumentParser,
@@ -23,7 +26,6 @@ sys.path.append("/Users/a58/Downloads/MoE_Train")
 from hparams.arguments import ModelArguments, DataArguments, \
     RetrieverTrainingArguments as TrainingArguments
 from hparams.data import TrainDatasetForSft, CustomCollator
-# from .modeling import BiEncoderModel
 from trainer import CustomTrainer
 
 logger = logging.getLogger(__name__)
@@ -64,6 +66,21 @@ def main():
     logger.info("Model parameters %s", model_args)
     logger.info("Data parameters %s", data_args)
 
+    # Detecting last checkpoint.
+    last_checkpoint = None
+    if os.path.isdir(training_args.output_dir) and training_args.do_train and not training_args.overwrite_output_dir:
+        last_checkpoint = get_last_checkpoint(training_args.output_dir)
+        if last_checkpoint is None and len(os.listdir(training_args.output_dir)) > 0:
+            raise ValueError(
+                f"Output directory ({training_args.output_dir}) already exists and is not empty. "
+                "Use --overwrite_output_dir to overcome."
+            )
+        elif last_checkpoint is not None and training_args.resume_from_checkpoint is None:
+            logger.info(
+                f"Checkpoint detected, resuming training at {last_checkpoint}. To avoid this behavior, change "
+                "the `--output_dir` or add `--overwrite_output_dir` to train from scratch."
+            )
+
     # Set seed
     set_seed(training_args.seed)
 
@@ -82,6 +99,28 @@ def main():
     logger.info('Config: %s', config)
 
     model = AutoModelForCausalLM.from_pretrained(model_args.model_name_or_path, config = config, trust_remote_code=True)#, torch_dtype=torch.bfloat16
+
+    # Padding strategy
+    if data_args.pad_to_max_length:
+        padding = "max_length"
+    else:
+        # We will pad later, dynamically at batch creation, to the max sequence length in each batch
+        padding = False
+
+    # start a new wandb run to track this script
+    # wandb.init(
+    #     # set the wandb project where this run will be logged
+    #     project="Moe_finetuning",
+    #     entity="darren_zeng",
+    #     config={
+    #     "learning_rate": config.learning_rate,
+    #     "architecture": model_args.model_name_or_path,
+    #     "batch_size": training_args.per_device_train_batch_size,
+    #     "test_batch_size": training_args.per_device_eval_batch_size,
+    #     "epochs": training_args.num_train_epochs
+    #     },
+    #     name="test1"
+    # )
 
     if training_args.use_lora:
         world_size = int(os.environ.get("WORLD_SIZE", 1))
@@ -117,13 +156,24 @@ def main():
 
     train_dataset = TrainDatasetForSft(args=data_args, tokenizer=tokenizer)
 
+    # Data collator will default to DataCollatorWithPadding when the tokenizer is passed to Trainer, so we change it if
+    # we already did the padding.
+    if data_args.pad_to_max_length:
+        data_collator = default_data_collator
+    elif training_args.fp16:
+        data_collator = CustomCollator(tokenizer, args=data_args, pad_to_multiple_of=8)
+    else:
+        data_collator = CustomCollator(
+            tokenizer,
+            args=data_args
+        )
+        
     trainer = CustomTrainer(
         model=model,
         args=training_args,
         train_dataset=train_dataset,
-        data_collator=CustomCollator(
-            tokenizer
-        ),
+        eval_dataset=None,
+        data_collator=data_collator,
         tokenizer=tokenizer
     )
 
@@ -131,6 +181,7 @@ def main():
 
     # Training
     trainer.train()
+    wandb.finish()
     trainer.save_model()
     # For convenience, we also re-save the tokenizer to the same directory,
     # so that you can share your model easily on huggingface.co/models =)

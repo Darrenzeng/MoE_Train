@@ -1,0 +1,61 @@
+
+  0%|                                                                                                                                                                       | 0/2 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/Users/a58/Downloads/MoE_Train/finetune/run.py", line 193, in <module>
+    main()
+  File "/Users/a58/Downloads/MoE_Train/finetune/run.py", line 183, in main
+    trainer.train()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/trainer.py", line 1961, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/trainer.py", line 2902, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/Users/a58/Downloads/MoE_Train/finetune/trainer.py", line 47, in compute_loss
+    outputs = model(**inputs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/peft/peft_model.py", line 1129, in forward
+    return self.base_model(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/peft/tuners/tuners_utils.py", line 161, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1173, in forward
+    outputs = self.model(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 1058, in forward
+    layer_outputs = decoder_layer(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 786, in forward
+    hidden_states = self.mlp(hidden_states)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 185, in forward
+    return self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/peft/tuners/lora/layer.py", line 509, in forward
+    result = result + lora_B(lora_A(dropout(x))) * scaling
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/dropout.py", line 58, in forward
+    return F.dropout(input, self.p, self.training, self.inplace)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/functional.py", line 1266, in dropout
+    return _VF.dropout_(input, p, training) if inplace else _VF.dropout(input, p, training)
+RuntimeError: MPS backend out of memory (MPS allocated: 17.66 GB, other allocations: 480.29 MB, max allowed: 18.13 GB). Tried to allocate 36.74 MB on private pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).

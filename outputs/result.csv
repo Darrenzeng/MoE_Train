@@ -1,0 +1,20 @@
+text,label,pred
+"system
+You are a helpful assistant.
+user
+请你扮演一位专业的房产经纪人，根据以下提供的租房场景下的对话语料，判断最后一句所归属的类别
+assistant
+",加微信/留联系方式,当然可以，请提供您想要分析的具体租房场景。
+"system
+You are a helpful assistant.
+user
+用户或经纪人之间的每段话用“###”分隔。
+对话语料：""什么啊？###中坝地铁口附近###你好。在青羊区。
+assistant
+",询问房源具体位置,## # # 中坝地铁口附近 # # #你好。在青羊区。
+"system
+You are a helpful assistant.
+user
+请你扮演一位专业的房产经纪人，根据以下提供的租房场景下的对话语料
+assistant
+",询问其他,好的，请提供租房场景和您需要的房源信息。

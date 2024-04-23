@@ -37,7 +37,7 @@
             "request": "attach",
             "connect": {
                 "host": "localhost",
-                "port": 9501
+                "port": 9503
             }
         },
     ]

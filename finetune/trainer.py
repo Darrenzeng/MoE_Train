@@ -38,17 +38,20 @@ class CustomTrainer(Trainer):
 
         Subclass and override for custom behavior.
         """
+        inputs = {k:v.to(model.device) for k, v in inputs.items()}
+        # input_ids = inputs['input_ids'].to(model.device)#.to("cuda")
+        # attention_mask = inputs['attention_mask'].to(model.device)
+        # labels = inputs['labels'].to(model.device)
         
-        input_ids = inputs['input_ids'].to(model.device)#.to("cuda")
-        attention_mask = inputs['attention_mask'].to(model.device)
-        labels = inputs['labels'].to(model.device)
-        
-        outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+        # outputs = model(input_ids=input_ids, attention_mask=attention_mask)
+        outputs = model(**inputs)
         #取label和output，计算loss
-        loss = loss_fn(outputs.logits, labels)
-        # loss = outputs.loss
+        # loss = loss_fn(outputs.logits, labels)
+        loss = outputs.loss
 
         return (loss, outputs) if return_outputs else loss
+    
+    
 
 def loss_fn(logits, targets):
     # shift the targets such that output n predicts token n+1

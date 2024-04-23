@@ -1,0 +1,380 @@
+2024-04-15 10:28:33,240 INFO    StreamThr :18121 [internal.py:wandb_internal():86] W&B internal server running at pid: 18121, started at: 2024-04-15 10:28:33.239682
+2024-04-15 10:28:33,240 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status
+2024-04-15 10:28:33,243 INFO    WriterThread:18121 [datastore.py:open_for_write():87] open: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/run-b12e2w2t.wandb
+2024-04-15 10:28:33,244 DEBUG   SenderThread:18121 [sender.py:send():379] send: header
+2024-04-15 10:28:33,274 DEBUG   SenderThread:18121 [sender.py:send():379] send: run
+2024-04-15 10:28:33,886 INFO    SenderThread:18121 [dir_watcher.py:__init__():211] watching files in: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files
+2024-04-15 10:28:33,886 INFO    SenderThread:18121 [sender.py:_start_run_threads():1124] run started: b12e2w2t with start time 1713148113.240271
+2024-04-15 10:28:33,898 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: check_version
+2024-04-15 10:28:33,898 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: check_version
+2024-04-15 10:28:36,625 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: run_start
+2024-04-15 10:28:36,635 DEBUG   HandlerThread:18121 [system_info.py:__init__():26] System info init
+2024-04-15 10:28:36,636 DEBUG   HandlerThread:18121 [system_info.py:__init__():41] System info init done
+2024-04-15 10:28:36,636 INFO    HandlerThread:18121 [system_monitor.py:start():194] Starting system monitor
+2024-04-15 10:28:36,636 INFO    SystemMonitor:18121 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-15 10:28:36,636 INFO    HandlerThread:18121 [system_monitor.py:probe():214] Collecting system info
+2024-04-15 10:28:36,637 INFO    SystemMonitor:18121 [interfaces.py:start():190] Started cpu monitoring
+2024-04-15 10:28:36,637 DEBUG   HandlerThread:18121 [system_info.py:probe():150] Probing system
+2024-04-15 10:28:36,637 INFO    SystemMonitor:18121 [interfaces.py:start():190] Started disk monitoring
+2024-04-15 10:28:36,639 INFO    SystemMonitor:18121 [interfaces.py:start():190] Started gpuapple monitoring
+2024-04-15 10:28:36,642 INFO    SystemMonitor:18121 [interfaces.py:start():190] Started memory monitoring
+2024-04-15 10:28:36,644 INFO    SystemMonitor:18121 [interfaces.py:start():190] Started network monitoring
+2024-04-15 10:28:36,649 DEBUG   HandlerThread:18121 [system_info.py:_probe_git():135] Probing git
+2024-04-15 10:28:36,674 DEBUG   HandlerThread:18121 [system_info.py:_probe_git():143] Probing git done
+2024-04-15 10:28:36,674 DEBUG   HandlerThread:18121 [system_info.py:probe():198] Probing system done
+2024-04-15 10:28:36,674 DEBUG   HandlerThread:18121 [system_monitor.py:probe():223] {'os': 'macOS-14.2.1-arm64-arm-64bit', 'python': '3.10.13', 'heartbeatAt': '2024-04-15T02:28:36.637653', 'startedAt': '2024-04-15T02:28:33.233571', 'docker': None, 'cuda': None, 'args': ('--model_name_or_path', '/Users/a58/Downloads/pretrain_model/Qwen/Qwen1.5-0.5B-Chat', '--do_train', 'True', '--per_device_train_batch_size', '1', '--gradient_accumulation_steps', '1', '--learning_rate', '5e-5', '--weight_decay', '0', '--max_grad_norm', '1.0', '--num_train_epochs', '1.0', '--block_size', '32', '--train_file', '/Users/a58/Downloads/my_test/data/data_sft/renting_data_train_7000_improved_prompting3.json', '--output_dir', '/Users/a58/Downloads/MoE_Train/outputs', '--overwrite_output_dir', '--logging_dir', '/Users/a58/Downloads/MoE_Train/outputs', '--save_strategy', 'epoch', '--save_total_limit', '1', '--logging_strategy', 'steps', '--logging_steps', '10', '--report_to', 'wandb', '--trust_remote_code', 'True', '--template', 'qwen', '--q_lora', 'False', '--use_lora', 'True', '--lora_r', '8', '--lora_alpha', '32', '--lora_dropout', '0.05', '--lora_target_modules', 'q_proj', 'v_proj', 'k_proj', 'o_proj', 'gate_proj', 'down_proj', 'up_proj'), 'state': 'running', 'program': '/Users/a58/Downloads/MoE_Train/finetune/run.py', 'codePathLocal': 'run.py', 'codePath': 'finetune/run.py', 'git': {'remote': 'https://github.com/Darrenzeng/MoE_Train.git', 'commit': '5769742f6f9e686c6324ed68457139359bbaa7b0'}, 'email': 'zengyufei@58.com', 'root': '/Users/a58/Downloads/MoE_Train', 'host': '58deMacBook-Pro-2.local', 'username': 'a58', 'executable': '/Users/a58/anaconda3/envs/llama_factory/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'disk': {'/': {'total': 228.27386474609375, 'used': 13.368824005126953}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 16.0}}
+2024-04-15 10:28:36,674 INFO    HandlerThread:18121 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-15 10:28:36,674 INFO    HandlerThread:18121 [system_monitor.py:probe():227] Publishing system info
+2024-04-15 10:28:36,674 DEBUG   HandlerThread:18121 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-04-15 10:28:36,900 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/conda-environment.yaml
+2024-04-15 10:28:39,513 DEBUG   HandlerThread:18121 [system_info.py:_save_conda():222] Saving conda packages done
+2024-04-15 10:28:39,513 INFO    HandlerThread:18121 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-15 10:28:39,515 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:28:39,515 DEBUG   SenderThread:18121 [sender.py:send():379] send: files
+2024-04-15 10:28:39,516 INFO    SenderThread:18121 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-15 10:28:39,643 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-15 10:28:39,643 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: python_packages
+2024-04-15 10:28:39,644 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-15 10:28:39,644 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: stop_status
+2024-04-15 10:28:39,644 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-15 10:28:39,913 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/conda-environment.yaml
+2024-04-15 10:28:39,913 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/wandb-metadata.json
+2024-04-15 10:28:39,913 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/requirements.txt
+2024-04-15 10:28:40,005 DEBUG   SenderThread:18121 [sender.py:send():379] send: telemetry
+2024-04-15 10:28:40,005 DEBUG   SenderThread:18121 [sender.py:send():379] send: config
+2024-04-15 10:28:40,006 DEBUG   SenderThread:18121 [sender.py:send():379] send: metric
+2024-04-15 10:28:40,006 DEBUG   SenderThread:18121 [sender.py:send():379] send: telemetry
+2024-04-15 10:28:40,006 DEBUG   SenderThread:18121 [sender.py:send():379] send: metric
+2024-04-15 10:28:40,006 WARNING SenderThread:18121 [sender.py:send_metric():1341] Seen metric with glob (shouldn't happen)
+2024-04-15 10:28:40,006 DEBUG   SenderThread:18121 [sender.py:send():379] send: telemetry
+2024-04-15 10:28:40,471 INFO    wandb-upload_0:18121 [upload_job.py:push():131] Uploaded file /var/folders/0t/wpjq3m9x0s39k2ngjkd8dqj80000gn/T/tmppleq8ygewandb/f78l3fqd-wandb-metadata.json
+2024-04-15 10:28:40,918 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/output.log
+2024-04-15 10:28:42,926 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/output.log
+2024-04-15 10:28:44,213 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:28:48,951 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/output.log
+2024-04-15 10:28:49,857 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:28:50,961 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/output.log
+2024-04-15 10:28:54,664 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-15 10:28:54,665 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-15 10:28:54,669 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: stop_status
+2024-04-15 10:28:54,966 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:28:56,985 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/output.log
+2024-04-15 10:28:58,993 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/output.log
+2024-04-15 10:29:00,217 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:29:05,243 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:29:06,031 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/config.yaml
+2024-04-15 10:29:09,050 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-15 10:29:09,057 DEBUG   SenderThread:18121 [sender.py:send():379] send: metric
+2024-04-15 10:29:09,057 DEBUG   SenderThread:18121 [sender.py:send():379] send: metric
+2024-04-15 10:29:09,057 DEBUG   SenderThread:18121 [sender.py:send():379] send: metric
+2024-04-15 10:29:09,057 DEBUG   SenderThread:18121 [sender.py:send():379] send: metric
+2024-04-15 10:29:09,057 DEBUG   SenderThread:18121 [sender.py:send():379] send: metric
+2024-04-15 10:29:09,057 DEBUG   SenderThread:18121 [sender.py:send():379] send: metric
+2024-04-15 10:29:09,057 DEBUG   SenderThread:18121 [sender.py:send():379] send: history
+2024-04-15 10:29:09,057 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: summary_record
+2024-04-15 10:29:09,058 INFO    SenderThread:18121 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-15 10:29:09,060 DEBUG   SenderThread:18121 [sender.py:send():379] send: telemetry
+2024-04-15 10:29:09,060 DEBUG   SenderThread:18121 [sender.py:send():379] send: exit
+2024-04-15 10:29:09,060 INFO    SenderThread:18121 [sender.py:send_exit():586] handling exit code: 0
+2024-04-15 10:29:09,065 INFO    SenderThread:18121 [sender.py:send_exit():588] handling runtime: 32
+2024-04-15 10:29:09,065 INFO    SenderThread:18121 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-15 10:29:09,065 INFO    SenderThread:18121 [sender.py:send_exit():594] send defer
+2024-04-15 10:29:09,066 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:09,066 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 0
+2024-04-15 10:29:09,066 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:09,066 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-04-15 10:29:09,066 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 1
+2024-04-15 10:29:09,066 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:09,066 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 1
+2024-04-15 10:29:09,066 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:09,066 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-04-15 10:29:09,066 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 2
+2024-04-15 10:29:09,066 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:09,066 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 2
+2024-04-15 10:29:09,066 INFO    HandlerThread:18121 [system_monitor.py:finish():203] Stopping system monitor
+2024-04-15 10:29:09,067 INFO    HandlerThread:18121 [interfaces.py:finish():202] Joined cpu monitor
+2024-04-15 10:29:09,067 INFO    HandlerThread:18121 [interfaces.py:finish():202] Joined disk monitor
+2024-04-15 10:29:09,067 DEBUG   SystemMonitor:18121 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-04-15 10:29:09,068 INFO    HandlerThread:18121 [interfaces.py:finish():202] Joined gpuapple monitor
+2024-04-15 10:29:09,068 DEBUG   SystemMonitor:18121 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-04-15 10:29:09,068 INFO    HandlerThread:18121 [interfaces.py:finish():202] Joined memory monitor
+2024-04-15 10:29:09,068 DEBUG   SystemMonitor:18121 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-04-15 10:29:09,068 INFO    HandlerThread:18121 [interfaces.py:finish():202] Joined network monitor
+2024-04-15 10:29:09,069 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:09,069 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-04-15 10:29:09,069 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 3
+2024-04-15 10:29:09,069 DEBUG   SenderThread:18121 [sender.py:send():379] send: telemetry
+2024-04-15 10:29:09,069 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:09,069 DEBUG   SenderThread:18121 [sender.py:send():379] send: stats
+2024-04-15 10:29:09,069 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 3
+2024-04-15 10:29:09,069 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:09,069 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-04-15 10:29:09,069 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 4
+2024-04-15 10:29:09,069 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:09,069 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 4
+2024-04-15 10:29:09,069 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:09,069 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-04-15 10:29:09,069 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 5
+2024-04-15 10:29:09,069 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:09,069 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 5
+2024-04-15 10:29:09,070 DEBUG   SenderThread:18121 [sender.py:send():379] send: summary
+2024-04-15 10:29:09,070 INFO    SenderThread:18121 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-15 10:29:09,070 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:09,070 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-04-15 10:29:09,070 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 6
+2024-04-15 10:29:09,070 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:09,070 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 6
+2024-04-15 10:29:09,070 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:09,070 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-04-15 10:29:09,073 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:29:09,355 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 7
+2024-04-15 10:29:09,356 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:09,356 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 7
+2024-04-15 10:29:09,356 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:09,356 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-04-15 10:29:10,051 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/config.yaml
+2024-04-15 10:29:10,052 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/wandb-summary.json
+2024-04-15 10:29:10,064 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:11,057 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/output.log
+2024-04-15 10:29:12,101 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 8
+2024-04-15 10:29:12,102 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:12,102 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:12,102 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 8
+2024-04-15 10:29:12,103 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:12,103 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-04-15 10:29:12,103 INFO    SenderThread:18121 [job_builder.py:build():318] Attempting to build job artifact
+2024-04-15 10:29:12,108 INFO    SenderThread:18121 [job_builder.py:_get_source_type():455] is repo sourced job
+2024-04-15 10:29:12,158 INFO    SenderThread:18121 [job_builder.py:build():431] adding wandb-job metadata file
+2024-04-15 10:29:12,164 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 9
+2024-04-15 10:29:12,165 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:12,165 DEBUG   SenderThread:18121 [sender.py:send():379] send: artifact
+2024-04-15 10:29:12,165 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 9
+2024-04-15 10:29:13,063 INFO    Thread-12 :18121 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/output.log
+2024-04-15 10:29:13,073 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:13,679 INFO    wandb-upload_1:18121 [upload_job.py:push():86] Skipped uploading /Users/a58/Library/Application Support/wandb/artifacts/staging/tmp26a87d2h
+2024-04-15 10:29:14,288 INFO    wandb-upload_0:18121 [upload_job.py:push():89] Uploaded file /var/folders/0t/wpjq3m9x0s39k2ngjkd8dqj80000gn/T/tmp7pph4si4/wandb-job.json
+2024-04-15 10:29:15,872 INFO    SenderThread:18121 [sender.py:send_artifact():1468] sent artifact job-https___github.com_Darrenzeng_MoE_Train.git_finetune_run.py - {'id': 'QXJ0aWZhY3Q6Nzk3MzU4NjYz', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE2MjQ2MjE0MQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6Nzk1OTkwNDky', 'versionIndex': 0}}}
+2024-04-15 10:29:15,872 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:15,872 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-04-15 10:29:15,873 INFO    SenderThread:18121 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-04-15 10:29:16,074 INFO    SenderThread:18121 [dir_watcher.py:finish():388] scan: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files
+2024-04-15 10:29:16,075 INFO    SenderThread:18121 [dir_watcher.py:finish():402] scan save: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/requirements.txt requirements.txt
+2024-04-15 10:29:16,075 INFO    SenderThread:18121 [dir_watcher.py:finish():402] scan save: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/output.log output.log
+2024-04-15 10:29:16,080 INFO    SenderThread:18121 [dir_watcher.py:finish():402] scan save: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/config.yaml config.yaml
+2024-04-15 10:29:16,083 INFO    SenderThread:18121 [dir_watcher.py:finish():402] scan save: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/wandb-summary.json wandb-summary.json
+2024-04-15 10:29:16,087 INFO    SenderThread:18121 [dir_watcher.py:finish():402] scan save: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/conda-environment.yaml conda-environment.yaml
+2024-04-15 10:29:16,092 INFO    SenderThread:18121 [dir_watcher.py:finish():402] scan save: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/wandb-metadata.json wandb-metadata.json
+2024-04-15 10:29:16,092 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 10
+2024-04-15 10:29:16,093 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:16,093 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:16,093 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 10
+2024-04-15 10:29:16,096 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:16,096 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-04-15 10:29:16,096 INFO    SenderThread:18121 [file_pusher.py:finish():172] shutting down file pusher
+2024-04-15 10:29:16,726 INFO    wandb-upload_0:18121 [upload_job.py:push():131] Uploaded file /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/output.log
+2024-04-15 10:29:17,052 INFO    wandb-upload_2:18121 [upload_job.py:push():131] Uploaded file /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/config.yaml
+2024-04-15 10:29:17,086 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:17,087 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:17,097 INFO    wandb-upload_4:18121 [upload_job.py:push():131] Uploaded file /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/conda-environment.yaml
+2024-04-15 10:29:18,087 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:18,088 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:18,088 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:29:18,827 INFO    wandb-upload_3:18121 [upload_job.py:push():131] Uploaded file /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/wandb-summary.json
+2024-04-15 10:29:19,088 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:19,089 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:20,091 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:20,092 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:21,096 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:21,097 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:22,101 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:22,101 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:23,102 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:29:23,103 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:23,103 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:24,105 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:24,106 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:25,111 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:25,112 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:25,734 ERROR   wandb-upload_1:18121 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/b12e2w2t/requirements.txt?Expires=1713234556&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=IfTr%2F6QNhI4yFESitgenDLzTQ9bA26Hj7OvA6wb%2BghNoVs%2BWrwfOayTIrRrgg1ByllI6H1V%2FVr5oG6RdrL1nXiMgaXnHIArtjGT2%2Bwvd3KcFMVV3%2BSkCJ2%2FXINvU0GL43GbehrR2ncUBUaCTomP9jX%2B3mPnL593fORwY5o9PZTvgmAIvk7anvfM2VCO3YZMK0kwyouf14t3ACJeutNLVdjIaUvldTuW%2FV5xaienlt5gUyu%2Fzo%2FvktvX7CSqHRYFgEY67ID%2B7gtdAd7MpoHtOrrub70PLDRl56SyCG69U7kknNFlUEinm36Eb6eLh2mTWHpVUIytnlm7Oe%2Fb%2B0Rc9dA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/darren_qing/Moe_finetuning/b12e2w2t/requirements.txt?Expires=1713234556&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=IfTr%2F6QNhI4yFESitgenDLzTQ9bA26Hj7OvA6wb%2BghNoVs%2BWrwfOayTIrRrgg1ByllI6H1V%2FVr5oG6RdrL1nXiMgaXnHIArtjGT2%2Bwvd3KcFMVV3%2BSkCJ2%2FXINvU0GL43GbehrR2ncUBUaCTomP9jX%2B3mPnL593fORwY5o9PZTvgmAIvk7anvfM2VCO3YZMK0kwyouf14t3ACJeutNLVdjIaUvldTuW%2FV5xaienlt5gUyu%2Fzo%2FvktvX7CSqHRYFgEY67ID%2B7gtdAd7MpoHtOrrub70PLDRl56SyCG69U7kknNFlUEinm36Eb6eLh2mTWHpVUIytnlm7Oe%2Fb%2B0Rc9dA%3D%3D (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x104862230>, 'Connection to storage.googleapis.com timed out. (connect timeout=None)'))
+2024-04-15 10:29:25,734 ERROR   wandb-upload_1:18121 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '5234'}
+2024-04-15 10:29:25,734 ERROR   wandb-upload_1:18121 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-15 10:29:26,116 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:26,117 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:27,120 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:27,121 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:28,122 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:29:28,126 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:28,126 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:29,128 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:29,128 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:30,131 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:30,132 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:31,134 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:31,135 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:32,139 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:32,140 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:33,141 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:29:33,145 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:33,145 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:34,150 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:34,151 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:35,153 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:35,154 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:36,158 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:36,159 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:36,252 ERROR   wandb-upload_1:18121 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/b12e2w2t/requirements.txt?Expires=1713234556&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=IfTr%2F6QNhI4yFESitgenDLzTQ9bA26Hj7OvA6wb%2BghNoVs%2BWrwfOayTIrRrgg1ByllI6H1V%2FVr5oG6RdrL1nXiMgaXnHIArtjGT2%2Bwvd3KcFMVV3%2BSkCJ2%2FXINvU0GL43GbehrR2ncUBUaCTomP9jX%2B3mPnL593fORwY5o9PZTvgmAIvk7anvfM2VCO3YZMK0kwyouf14t3ACJeutNLVdjIaUvldTuW%2FV5xaienlt5gUyu%2Fzo%2FvktvX7CSqHRYFgEY67ID%2B7gtdAd7MpoHtOrrub70PLDRl56SyCG69U7kknNFlUEinm36Eb6eLh2mTWHpVUIytnlm7Oe%2Fb%2B0Rc9dA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/darren_qing/Moe_finetuning/b12e2w2t/requirements.txt?Expires=1713234556&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=IfTr%2F6QNhI4yFESitgenDLzTQ9bA26Hj7OvA6wb%2BghNoVs%2BWrwfOayTIrRrgg1ByllI6H1V%2FVr5oG6RdrL1nXiMgaXnHIArtjGT2%2Bwvd3KcFMVV3%2BSkCJ2%2FXINvU0GL43GbehrR2ncUBUaCTomP9jX%2B3mPnL593fORwY5o9PZTvgmAIvk7anvfM2VCO3YZMK0kwyouf14t3ACJeutNLVdjIaUvldTuW%2FV5xaienlt5gUyu%2Fzo%2FvktvX7CSqHRYFgEY67ID%2B7gtdAd7MpoHtOrrub70PLDRl56SyCG69U7kknNFlUEinm36Eb6eLh2mTWHpVUIytnlm7Oe%2Fb%2B0Rc9dA%3D%3D (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x1047bf130>, 'Connection to storage.googleapis.com timed out. (connect timeout=None)'))
+2024-04-15 10:29:36,252 ERROR   wandb-upload_1:18121 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '5234'}
+2024-04-15 10:29:36,252 ERROR   wandb-upload_1:18121 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-15 10:29:37,162 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:37,162 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:38,163 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:29:38,164 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:38,164 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:39,166 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:39,167 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:40,169 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:40,170 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:41,171 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:41,171 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:42,176 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:42,176 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:43,177 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:29:43,181 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:43,181 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:44,183 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:44,183 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:45,189 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:45,190 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:46,193 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:46,194 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:47,199 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:47,200 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:48,161 ERROR   wandb-upload_1:18121 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/b12e2w2t/requirements.txt?Expires=1713234556&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=IfTr%2F6QNhI4yFESitgenDLzTQ9bA26Hj7OvA6wb%2BghNoVs%2BWrwfOayTIrRrgg1ByllI6H1V%2FVr5oG6RdrL1nXiMgaXnHIArtjGT2%2Bwvd3KcFMVV3%2BSkCJ2%2FXINvU0GL43GbehrR2ncUBUaCTomP9jX%2B3mPnL593fORwY5o9PZTvgmAIvk7anvfM2VCO3YZMK0kwyouf14t3ACJeutNLVdjIaUvldTuW%2FV5xaienlt5gUyu%2Fzo%2FvktvX7CSqHRYFgEY67ID%2B7gtdAd7MpoHtOrrub70PLDRl56SyCG69U7kknNFlUEinm36Eb6eLh2mTWHpVUIytnlm7Oe%2Fb%2B0Rc9dA%3D%3D: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/darren_qing/Moe_finetuning/b12e2w2t/requirements.txt?Expires=1713234556&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=IfTr%2F6QNhI4yFESitgenDLzTQ9bA26Hj7OvA6wb%2BghNoVs%2BWrwfOayTIrRrgg1ByllI6H1V%2FVr5oG6RdrL1nXiMgaXnHIArtjGT2%2Bwvd3KcFMVV3%2BSkCJ2%2FXINvU0GL43GbehrR2ncUBUaCTomP9jX%2B3mPnL593fORwY5o9PZTvgmAIvk7anvfM2VCO3YZMK0kwyouf14t3ACJeutNLVdjIaUvldTuW%2FV5xaienlt5gUyu%2Fzo%2FvktvX7CSqHRYFgEY67ID%2B7gtdAd7MpoHtOrrub70PLDRl56SyCG69U7kknNFlUEinm36Eb6eLh2mTWHpVUIytnlm7Oe%2Fb%2B0Rc9dA%3D%3D (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x104862830>, 'Connection to storage.googleapis.com timed out. (connect timeout=None)'))
+2024-04-15 10:29:48,162 ERROR   wandb-upload_1:18121 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '5234'}
+2024-04-15 10:29:48,162 ERROR   wandb-upload_1:18121 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-15 10:29:48,162 INFO    wandb-upload_1:18121 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connection.py", line 179, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x104862830>, 'Connection to storage.googleapis.com timed out. (connect timeout=None)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/darren_qing/Moe_finetuning/b12e2w2t/requirements.txt?Expires=1713234556&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=IfTr%2F6QNhI4yFESitgenDLzTQ9bA26Hj7OvA6wb%2BghNoVs%2BWrwfOayTIrRrgg1ByllI6H1V%2FVr5oG6RdrL1nXiMgaXnHIArtjGT2%2Bwvd3KcFMVV3%2BSkCJ2%2FXINvU0GL43GbehrR2ncUBUaCTomP9jX%2B3mPnL593fORwY5o9PZTvgmAIvk7anvfM2VCO3YZMK0kwyouf14t3ACJeutNLVdjIaUvldTuW%2FV5xaienlt5gUyu%2Fzo%2FvktvX7CSqHRYFgEY67ID%2B7gtdAd7MpoHtOrrub70PLDRl56SyCG69U7kknNFlUEinm36Eb6eLh2mTWHpVUIytnlm7Oe%2Fb%2B0Rc9dA%3D%3D (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x104862830>, 'Connection to storage.googleapis.com timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2760, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /wandb-production.appspot.com/darren_qing/Moe_finetuning/b12e2w2t/requirements.txt?Expires=1713234556&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=IfTr%2F6QNhI4yFESitgenDLzTQ9bA26Hj7OvA6wb%2BghNoVs%2BWrwfOayTIrRrgg1ByllI6H1V%2FVr5oG6RdrL1nXiMgaXnHIArtjGT2%2Bwvd3KcFMVV3%2BSkCJ2%2FXINvU0GL43GbehrR2ncUBUaCTomP9jX%2B3mPnL593fORwY5o9PZTvgmAIvk7anvfM2VCO3YZMK0kwyouf14t3ACJeutNLVdjIaUvldTuW%2FV5xaienlt5gUyu%2Fzo%2FvktvX7CSqHRYFgEY67ID%2B7gtdAd7MpoHtOrrub70PLDRl56SyCG69U7kknNFlUEinm36Eb6eLh2mTWHpVUIytnlm7Oe%2Fb%2B0Rc9dA%3D%3D (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x104862830>, 'Connection to storage.googleapis.com timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2791, in upload_file
+    raise _e.with_traceback(sys.exc_info()[2])
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2760, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 507, in send
+    raise ConnectTimeout(e, request=request)
+wandb.sdk.lib.retry.TransientError: None
+2024-04-15 10:29:48,201 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:48,202 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:48,202 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:29:49,207 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:49,207 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:50,210 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:50,218 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:51,212 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:51,213 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:52,218 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:52,218 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:53,221 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: status_report
+2024-04-15 10:29:53,222 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:53,222 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:54,225 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:54,226 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:55,228 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:55,229 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:55,631 INFO    wandb-upload_1:18121 [upload_job.py:push():131] Uploaded file /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/files/requirements.txt
+2024-04-15 10:29:55,836 INFO    Thread-11 (_thread_body):18121 [sender.py:transition_state():614] send defer: 11
+2024-04-15 10:29:55,836 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:55,836 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 11
+2024-04-15 10:29:55,837 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:55,837 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 11
+2024-04-15 10:29:55,837 INFO    SenderThread:18121 [file_pusher.py:join():178] waiting for file pusher
+2024-04-15 10:29:55,840 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 12
+2024-04-15 10:29:55,840 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:55,840 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 12
+2024-04-15 10:29:55,841 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:55,841 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 12
+2024-04-15 10:29:55,841 INFO    SenderThread:18121 [file_stream.py:finish():614] file stream finish called
+2024-04-15 10:29:56,082 INFO    SenderThread:18121 [file_stream.py:finish():618] file stream finish is done
+2024-04-15 10:29:56,083 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 13
+2024-04-15 10:29:56,083 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:56,083 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 13
+2024-04-15 10:29:56,084 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:56,084 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 13
+2024-04-15 10:29:56,085 INFO    SenderThread:18121 [sender.py:transition_state():614] send defer: 14
+2024-04-15 10:29:56,086 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: defer
+2024-04-15 10:29:56,086 DEBUG   SenderThread:18121 [sender.py:send():379] send: final
+2024-04-15 10:29:56,086 INFO    HandlerThread:18121 [handler.py:handle_request_defer():172] handle defer: 14
+2024-04-15 10:29:56,086 DEBUG   SenderThread:18121 [sender.py:send():379] send: footer
+2024-04-15 10:29:56,086 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: defer
+2024-04-15 10:29:56,086 INFO    SenderThread:18121 [sender.py:send_request_defer():610] handle sender defer: 14
+2024-04-15 10:29:56,088 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-15 10:29:56,088 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: poll_exit
+2024-04-15 10:29:56,089 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-15 10:29:56,090 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: server_info
+2024-04-15 10:29:56,091 DEBUG   SenderThread:18121 [sender.py:send_request():406] send_request: server_info
+2024-04-15 10:29:56,094 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: get_summary
+2024-04-15 10:29:56,095 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: sampled_history
+2024-04-15 10:29:56,328 DEBUG   HandlerThread:18121 [handler.py:handle_request():146] handle_request: shutdown
+2024-04-15 10:29:56,329 INFO    HandlerThread:18121 [handler.py:finish():866] shutting down handler
+2024-04-15 10:29:57,093 INFO    WriterThread:18121 [datastore.py:close():296] close: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240415_102833-b12e2w2t/run-b12e2w2t.wandb
+2024-04-15 10:29:57,330 INFO    SenderThread:18121 [sender.py:finish():1546] shutting down sender
+2024-04-15 10:29:57,331 INFO    SenderThread:18121 [file_pusher.py:finish():172] shutting down file pusher
+2024-04-15 10:29:57,331 INFO    SenderThread:18121 [file_pusher.py:join():178] waiting for file pusher
