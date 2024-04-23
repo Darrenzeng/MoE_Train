@@ -64,6 +64,7 @@ class TrainDatasetForSft(Dataset):
             result["instruction"].append(query)
             result["input"].append("")
             result["output"].append(label)
+            
         return result
         
     def __getitem__(self, item) -> Tuple[str, List[str]]:
