@@ -15,6 +15,7 @@ import wandb
 from pathlib import Path
 
 from transformers import AutoConfig, AutoTokenizer, AutoModelForCausalLM, default_data_collator
+from transformers.trainer_utils import get_last_checkpoint
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training
 from transformers import (
     HfArgumentParser,
