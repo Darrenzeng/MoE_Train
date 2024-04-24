@@ -1,7 +1,7 @@
 python /Users/a58/Downloads/MoE_Train/finetune/run.py \
     --model_name_or_path /Users/a58/Downloads/pretrain_model/Qwen/Qwen1.5-0.5B-Chat \
     --do_train True \
-    --per_device_train_batch_size 4 \
+    --per_device_train_batch_size 1 \
     --gradient_accumulation_steps 1 \
     --learning_rate 5e-5 \
     --weight_decay 0 \
@@ -18,7 +18,7 @@ python /Users/a58/Downloads/MoE_Train/finetune/run.py \
     --logging_steps   1  \
     --report_to wandb \
     --trust_remote_code True \
-    --template qwen \
+    --template llama3 \
     --q_lora False \
     --use_lora True \
     --lora_r 8 \

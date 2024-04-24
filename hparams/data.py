@@ -54,12 +54,12 @@ class TrainDatasetForSft(Dataset):
         """思路：如果是llama格式，则直接拼接instruction和input（包括qwen）
                 如果是gpt格式，以conversation对话形式存在
         """
+        template = get_template_and_fix_tokenizer(self.tokenizer, name=self.args.template)
         result = {"instruction":[], "input":[], "output":[]}
         for idx in range(len(example['input'])):
             query = example['instruction'][idx] + example['input'][idx]
             label = example['output'][idx]
             #需要调用模板，对query进行处理
-            template = get_template_and_fix_tokenizer(self.tokenizer, name=self.args.template)
             query = add_prompt_form_template(template=template, query=query)
             result["instruction"].append(query)
             result["input"].append("")

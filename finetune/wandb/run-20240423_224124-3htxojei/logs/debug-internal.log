@@ -1,0 +1,115 @@
+2024-04-23 22:41:24,406 INFO    StreamThr :10950 [internal.py:wandb_internal():86] W&B internal server running at pid: 10950, started at: 2024-04-23 22:41:24.403889
+2024-04-23 22:41:24,411 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: status
+2024-04-23 22:41:24,416 INFO    WriterThread:10950 [datastore.py:open_for_write():87] open: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/run-3htxojei.wandb
+2024-04-23 22:41:24,420 DEBUG   SenderThread:10950 [sender.py:send():379] send: header
+2024-04-23 22:41:24,458 DEBUG   SenderThread:10950 [sender.py:send():379] send: run
+2024-04-23 22:41:25,563 INFO    SenderThread:10950 [dir_watcher.py:__init__():211] watching files in: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files
+2024-04-23 22:41:25,563 INFO    SenderThread:10950 [sender.py:_start_run_threads():1124] run started: 3htxojei with start time 1713883284.40389
+2024-04-23 22:41:25,594 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: check_version
+2024-04-23 22:41:25,595 DEBUG   SenderThread:10950 [sender.py:send_request():406] send_request: check_version
+2024-04-23 22:41:27,727 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: run_start
+2024-04-23 22:41:27,738 DEBUG   HandlerThread:10950 [system_info.py:__init__():26] System info init
+2024-04-23 22:41:27,738 DEBUG   HandlerThread:10950 [system_info.py:__init__():41] System info init done
+2024-04-23 22:41:27,738 INFO    HandlerThread:10950 [system_monitor.py:start():194] Starting system monitor
+2024-04-23 22:41:27,739 INFO    SystemMonitor:10950 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-23 22:41:27,739 INFO    HandlerThread:10950 [system_monitor.py:probe():214] Collecting system info
+2024-04-23 22:41:27,741 DEBUG   HandlerThread:10950 [system_info.py:probe():150] Probing system
+2024-04-23 22:41:27,741 INFO    SystemMonitor:10950 [interfaces.py:start():190] Started cpu monitoring
+2024-04-23 22:41:27,742 INFO    SystemMonitor:10950 [interfaces.py:start():190] Started disk monitoring
+2024-04-23 22:41:27,744 INFO    SystemMonitor:10950 [interfaces.py:start():190] Started gpuapple monitoring
+2024-04-23 22:41:27,749 INFO    SystemMonitor:10950 [interfaces.py:start():190] Started memory monitoring
+2024-04-23 22:41:27,751 INFO    SystemMonitor:10950 [interfaces.py:start():190] Started network monitoring
+2024-04-23 22:41:27,757 DEBUG   HandlerThread:10950 [system_info.py:_probe_git():135] Probing git
+2024-04-23 22:41:27,788 DEBUG   HandlerThread:10950 [system_info.py:_probe_git():143] Probing git done
+2024-04-23 22:41:27,789 DEBUG   HandlerThread:10950 [system_info.py:probe():198] Probing system done
+2024-04-23 22:41:27,789 DEBUG   HandlerThread:10950 [system_monitor.py:probe():223] {'os': 'macOS-14.2.1-arm64-arm-64bit', 'python': '3.10.13', 'heartbeatAt': '2024-04-23T14:41:27.741917', 'startedAt': '2024-04-23T14:41:24.381015', 'docker': None, 'cuda': None, 'args': ('--model_name_or_path', '/Users/a58/Downloads/pretrain_model/Qwen/Qwen1.5-0.5B-Chat', '--do_train', 'True', '--per_device_train_batch_size', '1', '--gradient_accumulation_steps', '1', '--learning_rate', '5e-5', '--weight_decay', '0', '--max_grad_norm', '1.0', '--num_train_epochs', '1.0', '--block_size', '32', '--train_file', '/Users/a58/Downloads/my_test/data/data_sft/renting_data_train_7000_improved_prompting3.json', '--output_dir', '/Users/a58/Downloads/MoE_Train/outputs', '--overwrite_output_dir', '--logging_dir', '/Users/a58/Downloads/MoE_Train/outputs', '--save_strategy', 'epoch', '--save_total_limit', '1', '--logging_strategy', 'steps', '--logging_steps', '1', '--report_to', 'wandb', '--trust_remote_code', 'True', '--template', 'qwen', '--q_lora', 'False', '--use_lora', 'True', '--lora_r', '8', '--lora_alpha', '32', '--lora_dropout', '0.05', '--lora_target_modules', 'q_proj', 'v_proj', 'k_proj', 'o_proj', 'gate_proj', 'down_proj', 'up_proj'), 'state': 'running', 'program': '/Users/a58/Downloads/MoE_Train/finetune/run.py', 'codePathLocal': 'run.py', 'codePath': 'finetune/run.py', 'git': {'remote': 'https://github.com/Darrenzeng/MoE_Train.git', 'commit': '9ceba2fa16dcaae727b2916e6fcc8e3674ef1880'}, 'email': 'zengyufei@58.com', 'root': '/Users/a58/Downloads/MoE_Train', 'host': '58deMacBook-Pro-2.local', 'username': 'a58', 'executable': '/Users/a58/anaconda3/envs/llama_factory/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'disk': {'/': {'total': 228.27386474609375, 'used': 13.368824005126953}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 16.0}}
+2024-04-23 22:41:27,789 INFO    HandlerThread:10950 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-23 22:41:27,789 INFO    HandlerThread:10950 [system_monitor.py:probe():227] Publishing system info
+2024-04-23 22:41:27,789 DEBUG   HandlerThread:10950 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-04-23 22:41:28,578 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/conda-environment.yaml
+2024-04-23 22:41:30,585 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/conda-environment.yaml
+2024-04-23 22:41:30,683 DEBUG   HandlerThread:10950 [system_info.py:_save_conda():222] Saving conda packages done
+2024-04-23 22:41:30,684 INFO    HandlerThread:10950 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-23 22:41:30,688 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: status_report
+2024-04-23 22:41:30,688 DEBUG   SenderThread:10950 [sender.py:send():379] send: files
+2024-04-23 22:41:30,688 INFO    SenderThread:10950 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-23 22:41:31,080 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-23 22:41:31,081 DEBUG   SenderThread:10950 [sender.py:send_request():406] send_request: python_packages
+2024-04-23 22:41:31,081 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-23 22:41:31,081 DEBUG   SenderThread:10950 [sender.py:send_request():406] send_request: stop_status
+2024-04-23 22:41:31,084 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-23 22:41:31,405 ERROR   wandb-upload_0:10950 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/3htxojei/wandb-metadata.json?Expires=1713969691&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=j9bLB2oK9UbtjB73BFdu1vrpYZ8TsqIm06FyxoH6uDCdGlatgLQ4Onflj6r1vg%2BFquirqFQTk8U0gYQZdjNdgzUN9UIOwcHV3loMud0P92zLx7fNIvLOb0UbQkiKq%2F6nNnKOA1Ye3yDrTR5m2%2FcfAsm38JtZ41syzU9eWKIQ9bz62yLq3xPY53K2JvurQU25ylhByw6J0Hp9jzqFmtjljcA5HpErg%2BZAM%2BxQVtvqgMcMDTGIE4fYA1hxMysvgML8r0Q17ZBSFu8r8hUp73ywJX2nGyrWao3USt9mdUDI2svSu5eW%2BId6cB4E9DFps74qt4OiTY3ddwRwdbLcpvVzUA%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-23 22:41:31,405 ERROR   wandb-upload_0:10950 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-23 22:41:31,405 ERROR   wandb-upload_0:10950 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-23 22:41:31,513 DEBUG   SenderThread:10950 [sender.py:send():379] send: telemetry
+2024-04-23 22:41:31,513 DEBUG   SenderThread:10950 [sender.py:send():379] send: config
+2024-04-23 22:41:31,515 DEBUG   SenderThread:10950 [sender.py:send():379] send: metric
+2024-04-23 22:41:31,515 DEBUG   SenderThread:10950 [sender.py:send():379] send: telemetry
+2024-04-23 22:41:31,515 DEBUG   SenderThread:10950 [sender.py:send():379] send: metric
+2024-04-23 22:41:31,515 WARNING SenderThread:10950 [sender.py:send_metric():1341] Seen metric with glob (shouldn't happen)
+2024-04-23 22:41:31,515 DEBUG   SenderThread:10950 [sender.py:send():379] send: telemetry
+2024-04-23 22:41:31,591 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/output.log
+2024-04-23 22:41:31,591 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/requirements.txt
+2024-04-23 22:41:31,591 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/wandb-metadata.json
+2024-04-23 22:41:32,341 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-23 22:41:32,343 DEBUG   SenderThread:10950 [sender.py:send():379] send: metric
+2024-04-23 22:41:32,343 DEBUG   SenderThread:10950 [sender.py:send():379] send: metric
+2024-04-23 22:41:32,343 DEBUG   SenderThread:10950 [sender.py:send():379] send: metric
+2024-04-23 22:41:32,343 DEBUG   SenderThread:10950 [sender.py:send():379] send: metric
+2024-04-23 22:41:32,343 DEBUG   SenderThread:10950 [sender.py:send():379] send: history
+2024-04-23 22:41:32,344 DEBUG   SenderThread:10950 [sender.py:send_request():406] send_request: summary_record
+2024-04-23 22:41:32,345 INFO    SenderThread:10950 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-23 22:41:32,591 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/wandb-summary.json
+2024-04-23 22:41:32,746 ERROR   wandb-upload_0:10950 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/3htxojei/wandb-metadata.json?Expires=1713969691&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=j9bLB2oK9UbtjB73BFdu1vrpYZ8TsqIm06FyxoH6uDCdGlatgLQ4Onflj6r1vg%2BFquirqFQTk8U0gYQZdjNdgzUN9UIOwcHV3loMud0P92zLx7fNIvLOb0UbQkiKq%2F6nNnKOA1Ye3yDrTR5m2%2FcfAsm38JtZ41syzU9eWKIQ9bz62yLq3xPY53K2JvurQU25ylhByw6J0Hp9jzqFmtjljcA5HpErg%2BZAM%2BxQVtvqgMcMDTGIE4fYA1hxMysvgML8r0Q17ZBSFu8r8hUp73ywJX2nGyrWao3USt9mdUDI2svSu5eW%2BId6cB4E9DFps74qt4OiTY3ddwRwdbLcpvVzUA%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-23 22:41:32,746 ERROR   wandb-upload_0:10950 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-23 22:41:32,746 ERROR   wandb-upload_0:10950 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-23 22:41:33,596 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/output.log
+2024-04-23 22:41:34,601 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/output.log
+2024-04-23 22:41:35,358 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: status_report
+2024-04-23 22:41:35,455 INFO    wandb-upload_0:10950 [upload_job.py:push():131] Uploaded file /var/folders/0t/wpjq3m9x0s39k2ngjkd8dqj80000gn/T/tmpd73rmkxjwandb/b8u02ou7-wandb-metadata.json
+2024-04-23 22:41:37,671 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-23 22:41:37,673 DEBUG   SenderThread:10950 [sender.py:send():379] send: history
+2024-04-23 22:41:37,674 DEBUG   SenderThread:10950 [sender.py:send_request():406] send_request: summary_record
+2024-04-23 22:41:37,677 INFO    SenderThread:10950 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-23 22:41:38,563 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-23 22:41:38,564 DEBUG   SenderThread:10950 [sender.py:send():379] send: history
+2024-04-23 22:41:38,564 DEBUG   SenderThread:10950 [sender.py:send_request():406] send_request: summary_record
+2024-04-23 22:41:38,565 INFO    SenderThread:10950 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-23 22:41:38,618 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/output.log
+2024-04-23 22:41:38,618 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/wandb-summary.json
+2024-04-23 22:41:39,621 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/output.log
+2024-04-23 22:41:40,576 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: status_report
+2024-04-23 22:41:40,623 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/output.log
+2024-04-23 22:41:45,594 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: status_report
+2024-04-23 22:41:46,108 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-23 22:41:46,111 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-23 22:41:46,115 DEBUG   SenderThread:10950 [sender.py:send_request():406] send_request: stop_status
+2024-04-23 22:41:51,436 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: status_report
+2024-04-23 22:41:56,464 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: status_report
+2024-04-23 22:41:57,701 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/config.yaml
+2024-04-23 22:42:01,113 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-23 22:42:01,114 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-23 22:42:01,115 DEBUG   SenderThread:10950 [sender.py:send_request():406] send_request: stop_status
+2024-04-23 22:42:02,442 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: status_report
+2024-04-23 22:42:02,821 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-23 22:42:02,824 DEBUG   SenderThread:10950 [sender.py:send():379] send: history
+2024-04-23 22:42:02,825 DEBUG   SenderThread:10950 [sender.py:send_request():406] send_request: summary_record
+2024-04-23 22:42:02,832 INFO    SenderThread:10950 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-23 22:42:03,745 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/output.log
+2024-04-23 22:42:03,763 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/wandb-summary.json
+2024-04-23 22:42:04,750 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/output.log
+2024-04-23 22:42:07,851 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: status_report
+2024-04-23 22:42:08,159 DEBUG   HandlerThread:10950 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-23 22:42:08,172 DEBUG   SenderThread:10950 [sender.py:send():379] send: history
+2024-04-23 22:42:08,173 DEBUG   SenderThread:10950 [sender.py:send_request():406] send_request: summary_record
+2024-04-23 22:42:08,174 INFO    SenderThread:10950 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-23 22:42:08,782 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/wandb-summary.json
+2024-04-23 22:42:09,790 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/output.log
+2024-04-23 22:42:09,833 INFO    memory    :10950 [interfaces.py:monitor():140] Process proc.memory.rssMB has exited.
+2024-04-23 22:42:09,835 DEBUG   SystemMonitor:10950 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-04-23 22:42:09,837 DEBUG   SystemMonitor:10950 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-04-23 22:42:09,837 DEBUG   SystemMonitor:10950 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-04-23 22:42:09,842 DEBUG   SenderThread:10950 [sender.py:send():379] send: telemetry
+2024-04-23 22:42:09,848 DEBUG   SenderThread:10950 [sender.py:send():379] send: stats
+2024-04-23 22:42:10,567 INFO    MainThread:10950 [internal.py:handle_exit():76] Internal process exited
+2024-04-23 22:42:10,796 INFO    Thread-17 :10950 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240423_224124-3htxojei/files/output.log

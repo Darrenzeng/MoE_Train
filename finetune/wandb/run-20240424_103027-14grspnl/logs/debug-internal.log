@@ -1,0 +1,669 @@
+2024-04-24 10:30:27,043 INFO    StreamThr :5352 [internal.py:wandb_internal():86] W&B internal server running at pid: 5352, started at: 2024-04-24 10:30:27.042590
+2024-04-24 10:30:27,043 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: status
+2024-04-24 10:30:27,046 INFO    WriterThread:5352 [datastore.py:open_for_write():87] open: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/run-14grspnl.wandb
+2024-04-24 10:30:27,046 DEBUG   SenderThread:5352 [sender.py:send():379] send: header
+2024-04-24 10:30:27,078 DEBUG   SenderThread:5352 [sender.py:send():379] send: run
+2024-04-24 10:30:27,813 INFO    SenderThread:5352 [dir_watcher.py:__init__():211] watching files in: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files
+2024-04-24 10:30:27,813 INFO    SenderThread:5352 [sender.py:_start_run_threads():1124] run started: 14grspnl with start time 1713925827.043097
+2024-04-24 10:30:27,832 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: check_version
+2024-04-24 10:30:27,832 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: check_version
+2024-04-24 10:30:31,325 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: run_start
+2024-04-24 10:30:31,334 DEBUG   HandlerThread:5352 [system_info.py:__init__():26] System info init
+2024-04-24 10:30:31,334 DEBUG   HandlerThread:5352 [system_info.py:__init__():41] System info init done
+2024-04-24 10:30:31,334 INFO    HandlerThread:5352 [system_monitor.py:start():194] Starting system monitor
+2024-04-24 10:30:31,334 INFO    SystemMonitor:5352 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-24 10:30:31,334 INFO    HandlerThread:5352 [system_monitor.py:probe():214] Collecting system info
+2024-04-24 10:30:31,335 INFO    SystemMonitor:5352 [interfaces.py:start():190] Started cpu monitoring
+2024-04-24 10:30:31,335 DEBUG   HandlerThread:5352 [system_info.py:probe():150] Probing system
+2024-04-24 10:30:31,335 INFO    SystemMonitor:5352 [interfaces.py:start():190] Started disk monitoring
+2024-04-24 10:30:31,336 INFO    SystemMonitor:5352 [interfaces.py:start():190] Started gpuapple monitoring
+2024-04-24 10:30:31,336 INFO    SystemMonitor:5352 [interfaces.py:start():190] Started memory monitoring
+2024-04-24 10:30:31,339 INFO    SystemMonitor:5352 [interfaces.py:start():190] Started network monitoring
+2024-04-24 10:30:31,343 DEBUG   HandlerThread:5352 [system_info.py:_probe_git():135] Probing git
+2024-04-24 10:30:31,370 DEBUG   HandlerThread:5352 [system_info.py:_probe_git():143] Probing git done
+2024-04-24 10:30:31,370 DEBUG   HandlerThread:5352 [system_info.py:probe():198] Probing system done
+2024-04-24 10:30:31,370 DEBUG   HandlerThread:5352 [system_monitor.py:probe():223] {'os': 'macOS-14.2.1-arm64-arm-64bit', 'python': '3.10.13', 'heartbeatAt': '2024-04-24T02:30:31.335424', 'startedAt': '2024-04-24T02:30:27.039110', 'docker': None, 'cuda': None, 'args': ('--model_name_or_path', '/Users/a58/Downloads/pretrain_model/Qwen/Qwen1.5-0.5B-Chat', '--do_train', 'True', '--per_device_train_batch_size', '1', '--gradient_accumulation_steps', '1', '--learning_rate', '5e-5', '--weight_decay', '0', '--max_grad_norm', '1.0', '--num_train_epochs', '1.0', '--block_size', '32', '--train_file', '/Users/a58/Downloads/my_test/data/data_sft/renting_data_train_7000_improved_prompting3.json', '--output_dir', '/Users/a58/Downloads/MoE_Train/outputs', '--overwrite_output_dir', '--logging_dir', '/Users/a58/Downloads/MoE_Train/outputs', '--save_strategy', 'epoch', '--save_total_limit', '1', '--logging_strategy', 'steps', '--logging_steps', '1', '--report_to', 'wandb', '--trust_remote_code', 'True', '--template', 'qwen', '--q_lora', 'False', '--use_lora', 'True', '--lora_r', '8', '--lora_alpha', '32', '--lora_dropout', '0.05', '--lora_target_modules', 'q_proj', 'v_proj', 'k_proj', 'o_proj', 'gate_proj', 'down_proj', 'up_proj'), 'state': 'running', 'program': '/Users/a58/Downloads/MoE_Train/finetune/run.py', 'codePathLocal': 'run.py', 'codePath': 'finetune/run.py', 'git': {'remote': 'https://github.com/Darrenzeng/MoE_Train.git', 'commit': '9ceba2fa16dcaae727b2916e6fcc8e3674ef1880'}, 'email': 'zengyufei@58.com', 'root': '/Users/a58/Downloads/MoE_Train', 'host': '58deMacBook-Pro-2.local', 'username': 'a58', 'executable': '/Users/a58/anaconda3/envs/llama_factory/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'disk': {'/': {'total': 228.27386474609375, 'used': 13.368824005126953}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 16.0}}
+2024-04-24 10:30:31,370 INFO    HandlerThread:5352 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-24 10:30:31,370 INFO    HandlerThread:5352 [system_monitor.py:probe():227] Publishing system info
+2024-04-24 10:30:31,370 DEBUG   HandlerThread:5352 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-04-24 10:30:31,826 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/conda-environment.yaml
+2024-04-24 10:30:35,066 DEBUG   HandlerThread:5352 [system_info.py:_save_conda():222] Saving conda packages done
+2024-04-24 10:30:35,067 INFO    HandlerThread:5352 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-24 10:30:35,069 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: status_report
+2024-04-24 10:30:35,069 DEBUG   SenderThread:5352 [sender.py:send():379] send: files
+2024-04-24 10:30:35,069 INFO    SenderThread:5352 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-24 10:30:35,200 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: python_packages
+2024-04-24 10:30:35,201 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: python_packages
+2024-04-24 10:30:35,201 DEBUG   SenderThread:5352 [sender.py:send():379] send: telemetry
+2024-04-24 10:30:35,201 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-24 10:30:35,204 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-24 10:30:35,204 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: stop_status
+2024-04-24 10:30:35,699 DEBUG   SenderThread:5352 [sender.py:send():379] send: config
+2024-04-24 10:30:35,712 DEBUG   SenderThread:5352 [sender.py:send():379] send: metric
+2024-04-24 10:30:35,713 DEBUG   SenderThread:5352 [sender.py:send():379] send: telemetry
+2024-04-24 10:30:35,713 DEBUG   SenderThread:5352 [sender.py:send():379] send: metric
+2024-04-24 10:30:35,713 WARNING SenderThread:5352 [sender.py:send_metric():1341] Seen metric with glob (shouldn't happen)
+2024-04-24 10:30:35,713 DEBUG   SenderThread:5352 [sender.py:send():379] send: telemetry
+2024-04-24 10:30:35,810 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:30:35,810 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:30:35,810 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:30:35,845 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/conda-environment.yaml
+2024-04-24 10:30:35,845 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/output.log
+2024-04-24 10:30:35,845 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/requirements.txt
+2024-04-24 10:30:35,845 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/wandb-metadata.json
+2024-04-24 10:30:37,113 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:30:37,114 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:30:37,114 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:30:37,635 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: status_report
+2024-04-24 10:30:37,645 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-24 10:30:37,646 DEBUG   SenderThread:5352 [sender.py:send():379] send: metric
+2024-04-24 10:30:37,646 DEBUG   SenderThread:5352 [sender.py:send():379] send: metric
+2024-04-24 10:30:37,646 DEBUG   SenderThread:5352 [sender.py:send():379] send: metric
+2024-04-24 10:30:37,646 DEBUG   SenderThread:5352 [sender.py:send():379] send: metric
+2024-04-24 10:30:37,646 DEBUG   SenderThread:5352 [sender.py:send():379] send: history
+2024-04-24 10:30:37,646 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: summary_record
+2024-04-24 10:30:37,648 INFO    SenderThread:5352 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-24 10:30:37,859 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/output.log
+2024-04-24 10:30:37,859 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/wandb-summary.json
+2024-04-24 10:30:39,710 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:30:39,711 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:30:39,711 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:30:39,711 INFO    wandb-upload_0:5352 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2760, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2791, in upload_file
+    raise _e.with_traceback(sys.exc_info()[2])
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2760, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+wandb.sdk.lib.retry.TransientError: None
+2024-04-24 10:30:39,983 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/output.log
+2024-04-24 10:30:42,764 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: status_report
+2024-04-24 10:30:43,921 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:30:43,921 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:30:43,921 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:30:44,827 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-24 10:30:44,828 DEBUG   SenderThread:5352 [sender.py:send():379] send: history
+2024-04-24 10:30:44,828 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: summary_record
+2024-04-24 10:30:44,828 INFO    SenderThread:5352 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-24 10:30:44,996 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/wandb-summary.json
+2024-04-24 10:30:46,001 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/output.log
+2024-04-24 10:30:46,303 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: partial_history
+2024-04-24 10:30:46,303 DEBUG   SenderThread:5352 [sender.py:send():379] send: history
+2024-04-24 10:30:46,303 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: summary_record
+2024-04-24 10:30:46,304 INFO    SenderThread:5352 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-24 10:30:47,006 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/wandb-summary.json
+2024-04-24 10:30:48,019 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/output.log
+2024-04-24 10:30:48,373 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: status_report
+2024-04-24 10:30:50,283 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: internal_messages
+2024-04-24 10:30:50,285 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: stop_status
+2024-04-24 10:30:50,288 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: stop_status
+2024-04-24 10:30:52,253 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:30:52,254 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:30:52,254 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:30:54,562 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: status_report
+2024-04-24 10:30:59,255 DEBUG   SenderThread:5352 [sender.py:send():379] send: exit
+2024-04-24 10:30:59,256 INFO    SenderThread:5352 [sender.py:send_exit():586] handling exit code: 255
+2024-04-24 10:30:59,275 INFO    SenderThread:5352 [sender.py:send_exit():588] handling runtime: 27
+2024-04-24 10:30:59,279 INFO    SenderThread:5352 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-24 10:30:59,284 INFO    SenderThread:5352 [sender.py:send_exit():594] send defer
+2024-04-24 10:30:59,285 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: defer
+2024-04-24 10:30:59,285 INFO    HandlerThread:5352 [handler.py:handle_request_defer():172] handle defer: 0
+2024-04-24 10:30:59,286 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: defer
+2024-04-24 10:30:59,286 INFO    SenderThread:5352 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-04-24 10:30:59,286 INFO    SenderThread:5352 [sender.py:transition_state():614] send defer: 1
+2024-04-24 10:30:59,286 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: defer
+2024-04-24 10:30:59,286 INFO    HandlerThread:5352 [handler.py:handle_request_defer():172] handle defer: 1
+2024-04-24 10:30:59,287 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: defer
+2024-04-24 10:30:59,287 INFO    SenderThread:5352 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-04-24 10:30:59,287 INFO    SenderThread:5352 [sender.py:transition_state():614] send defer: 2
+2024-04-24 10:30:59,287 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: defer
+2024-04-24 10:30:59,287 INFO    HandlerThread:5352 [handler.py:handle_request_defer():172] handle defer: 2
+2024-04-24 10:30:59,287 INFO    HandlerThread:5352 [system_monitor.py:finish():203] Stopping system monitor
+2024-04-24 10:30:59,287 INFO    HandlerThread:5352 [interfaces.py:finish():202] Joined cpu monitor
+2024-04-24 10:30:59,288 DEBUG   SystemMonitor:5352 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-04-24 10:30:59,288 DEBUG   SystemMonitor:5352 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-04-24 10:30:59,288 DEBUG   SystemMonitor:5352 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-04-24 10:30:59,288 INFO    HandlerThread:5352 [interfaces.py:finish():202] Joined disk monitor
+2024-04-24 10:30:59,290 INFO    HandlerThread:5352 [interfaces.py:finish():202] Joined gpuapple monitor
+2024-04-24 10:30:59,291 INFO    HandlerThread:5352 [interfaces.py:finish():202] Joined memory monitor
+2024-04-24 10:30:59,291 INFO    HandlerThread:5352 [interfaces.py:finish():202] Joined network monitor
+2024-04-24 10:30:59,291 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: defer
+2024-04-24 10:30:59,291 INFO    SenderThread:5352 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-04-24 10:30:59,291 INFO    SenderThread:5352 [sender.py:transition_state():614] send defer: 3
+2024-04-24 10:30:59,291 DEBUG   SenderThread:5352 [sender.py:send():379] send: telemetry
+2024-04-24 10:30:59,291 DEBUG   SenderThread:5352 [sender.py:send():379] send: stats
+2024-04-24 10:30:59,292 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: defer
+2024-04-24 10:30:59,292 INFO    HandlerThread:5352 [handler.py:handle_request_defer():172] handle defer: 3
+2024-04-24 10:30:59,292 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: defer
+2024-04-24 10:30:59,292 INFO    SenderThread:5352 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-04-24 10:30:59,292 INFO    SenderThread:5352 [sender.py:transition_state():614] send defer: 4
+2024-04-24 10:30:59,292 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: defer
+2024-04-24 10:30:59,292 INFO    HandlerThread:5352 [handler.py:handle_request_defer():172] handle defer: 4
+2024-04-24 10:30:59,293 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: defer
+2024-04-24 10:30:59,293 INFO    SenderThread:5352 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-04-24 10:30:59,293 INFO    SenderThread:5352 [sender.py:transition_state():614] send defer: 5
+2024-04-24 10:30:59,293 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: defer
+2024-04-24 10:30:59,293 INFO    HandlerThread:5352 [handler.py:handle_request_defer():172] handle defer: 5
+2024-04-24 10:30:59,293 DEBUG   SenderThread:5352 [sender.py:send():379] send: summary
+2024-04-24 10:30:59,294 INFO    SenderThread:5352 [sender.py:_save_file():1390] saving file wandb-summary.json with policy end
+2024-04-24 10:30:59,294 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: defer
+2024-04-24 10:30:59,294 INFO    SenderThread:5352 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-04-24 10:30:59,294 INFO    SenderThread:5352 [sender.py:transition_state():614] send defer: 6
+2024-04-24 10:30:59,294 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: defer
+2024-04-24 10:30:59,294 INFO    HandlerThread:5352 [handler.py:handle_request_defer():172] handle defer: 6
+2024-04-24 10:30:59,294 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: defer
+2024-04-24 10:30:59,294 INFO    SenderThread:5352 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-04-24 10:30:59,301 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: status_report
+2024-04-24 10:30:59,382 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/wandb-summary.json
+2024-04-24 10:30:59,601 INFO    SenderThread:5352 [sender.py:transition_state():614] send defer: 7
+2024-04-24 10:30:59,602 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: defer
+2024-04-24 10:30:59,602 INFO    HandlerThread:5352 [handler.py:handle_request_defer():172] handle defer: 7
+2024-04-24 10:30:59,602 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: defer
+2024-04-24 10:30:59,602 INFO    SenderThread:5352 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-04-24 10:31:00,348 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-24 10:31:00,388 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/config.yaml
+2024-04-24 10:31:01,396 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/output.log
+2024-04-24 10:31:02,634 INFO    SenderThread:5352 [sender.py:transition_state():614] send defer: 8
+2024-04-24 10:31:02,637 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: poll_exit
+2024-04-24 10:31:02,642 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: defer
+2024-04-24 10:31:02,643 INFO    HandlerThread:5352 [handler.py:handle_request_defer():172] handle defer: 8
+2024-04-24 10:31:02,661 DEBUG   SenderThread:5352 [sender.py:send_request():406] send_request: defer
+2024-04-24 10:31:02,666 INFO    SenderThread:5352 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-04-24 10:31:02,666 INFO    SenderThread:5352 [job_builder.py:build():318] Attempting to build job artifact
+2024-04-24 10:31:02,716 INFO    SenderThread:5352 [job_builder.py:_get_source_type():455] is repo sourced job
+2024-04-24 10:31:02,783 INFO    SenderThread:5352 [job_builder.py:build():431] adding wandb-job metadata file
+2024-04-24 10:31:02,799 INFO    SenderThread:5352 [sender.py:transition_state():614] send defer: 9
+2024-04-24 10:31:02,800 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: defer
+2024-04-24 10:31:02,800 INFO    HandlerThread:5352 [handler.py:handle_request_defer():172] handle defer: 9
+2024-04-24 10:31:02,801 DEBUG   SenderThread:5352 [sender.py:send():379] send: artifact
+2024-04-24 10:31:03,357 DEBUG   HandlerThread:5352 [handler.py:handle_request():146] handle_request: poll_exit
+2024-04-24 10:31:03,404 INFO    Thread-12 :5352 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/files/output.log
+2024-04-24 10:31:04,487 INFO    wandb-upload_1:5352 [upload_job.py:push():86] Skipped uploading /Users/a58/Library/Application Support/wandb/artifacts/staging/tmpem8lnm3z
+2024-04-24 10:31:04,599 ERROR   wandb-upload_2:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/162462141/807810394/dd910704c1d1473955df6d8c31aa57b7?Expires=1714012264&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=LzSDKr4G0wMCj%2FRo3NW%2Bwpn6tYAAnubN%2BJI3Us1%2FgcdRuz5Uffp%2BCTio0jDLA9hYDuyB5Aq9Tmmz3husSCzzPxgrWM6T49bX%2F9n1pG3qUBATSCgiKugBzVW5MymRn51BIbJJxZa%2Bx3XbhXDG3F1oTw46P78c7GPfXyvqtu6%2BmoRiEzNlvtFl0Ei39UvqZwmtSQzmAlha8BTuBstuKvGJ3YblqZY0UrW2IZHu%2FMnQqPRlG9xK57wj%2FQk0rDz2VSGZuZAVFAuhm8fVZZRNFzb8iZwZ1Ht3yo27dikud7rxFOxUuy%2BFkU7nqP8BTrhu135jd%2Bf0na%2FMsNN%2FdyhbFfiagg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:31:04,599 ERROR   wandb-upload_2:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': '3ZEHBMHRRzlV322MMapXtw==', 'Content-Type': 'application/json', 'Content-Length': '23973'}
+2024-04-24 10:31:04,599 ERROR   wandb-upload_2:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:31:05,882 ERROR   wandb-upload_2:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/162462141/807810394/dd910704c1d1473955df6d8c31aa57b7?Expires=1714012264&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=LzSDKr4G0wMCj%2FRo3NW%2Bwpn6tYAAnubN%2BJI3Us1%2FgcdRuz5Uffp%2BCTio0jDLA9hYDuyB5Aq9Tmmz3husSCzzPxgrWM6T49bX%2F9n1pG3qUBATSCgiKugBzVW5MymRn51BIbJJxZa%2Bx3XbhXDG3F1oTw46P78c7GPfXyvqtu6%2BmoRiEzNlvtFl0Ei39UvqZwmtSQzmAlha8BTuBstuKvGJ3YblqZY0UrW2IZHu%2FMnQqPRlG9xK57wj%2FQk0rDz2VSGZuZAVFAuhm8fVZZRNFzb8iZwZ1Ht3yo27dikud7rxFOxUuy%2BFkU7nqP8BTrhu135jd%2Bf0na%2FMsNN%2FdyhbFfiagg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:31:05,882 ERROR   wandb-upload_2:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': '3ZEHBMHRRzlV322MMapXtw==', 'Content-Type': 'application/json', 'Content-Length': '23973'}
+2024-04-24 10:31:05,882 ERROR   wandb-upload_2:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:31:08,288 ERROR   wandb-upload_2:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-artifacts-prod/wandb_artifacts/162462141/807810394/dd910704c1d1473955df6d8c31aa57b7?Expires=1714012264&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=LzSDKr4G0wMCj%2FRo3NW%2Bwpn6tYAAnubN%2BJI3Us1%2FgcdRuz5Uffp%2BCTio0jDLA9hYDuyB5Aq9Tmmz3husSCzzPxgrWM6T49bX%2F9n1pG3qUBATSCgiKugBzVW5MymRn51BIbJJxZa%2Bx3XbhXDG3F1oTw46P78c7GPfXyvqtu6%2BmoRiEzNlvtFl0Ei39UvqZwmtSQzmAlha8BTuBstuKvGJ3YblqZY0UrW2IZHu%2FMnQqPRlG9xK57wj%2FQk0rDz2VSGZuZAVFAuhm8fVZZRNFzb8iZwZ1Ht3yo27dikud7rxFOxUuy%2BFkU7nqP8BTrhu135jd%2Bf0na%2FMsNN%2FdyhbFfiagg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:31:08,288 ERROR   wandb-upload_2:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-MD5': '3ZEHBMHRRzlV322MMapXtw==', 'Content-Type': 'application/json', 'Content-Length': '23973'}
+2024-04-24 10:31:08,288 ERROR   wandb-upload_2:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:31:08,288 INFO    wandb-upload_2:5352 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2760, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2791, in upload_file
+    raise _e.with_traceback(sys.exc_info()[2])
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2760, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+wandb.sdk.lib.retry.TransientError: None
+2024-04-24 10:31:08,290 ERROR   wandb-upload_2:5352 [upload_job.py:push():74] Failed to upload file: /var/folders/0t/wpjq3m9x0s39k2ngjkd8dqj80000gn/T/tmpeo8jvuos/wandb-job.json
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2760, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2791, in upload_file
+    raise _e.with_traceback(sys.exc_info()[2])
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2760, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+wandb.sdk.lib.retry.TransientError: None
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 212, in wrapped_fn
+    return retrier(*args, **kargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 183, in __call__
+    wandb.termlog(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/errors/term.py", line 39, in termlog
+    _log(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/errors/term.py", line 95, in _log
+    click.echo(line, file=sys.stderr, nl=newline)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/click/utils.py", line 318, in echo
+    file.write(out)  # type: ignore
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/filesync/upload_job.py", line 69, in push
+    deduped = self.save_fn(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/artifacts/artifact_saver.py", line 175, in <lambda>
+    lambda entry, progress_callback: self._manifest.storage_policy.store_file_sync(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/artifacts/storage_policies/wandb_storage_policy.py", line 327, in store_file_sync
+    self.default_file_upload(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/artifacts/storage_policies/wandb_storage_policy.py", line 250, in default_file_upload
+    self._api.upload_file_retry(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/apis/normalize.py", line 87, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 212, in wrapped_fn
+    return retrier(*args, **kargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 183, in __call__
+    wandb.termlog(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/errors/term.py", line 39, in termlog
+    _log(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/errors/term.py", line 95, in _log
+    click.echo(line, file=sys.stderr, nl=newline)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/click/utils.py", line 318, in echo
+    file.write(out)  # type: ignore
+wandb.errors.CommError: [Errno 5] Input/output error
+2024-04-24 10:31:08,420 WARNING StreamThr :5352 [internal.py:is_dead():414] Internal process exiting, parent pid 5306 disappeared
+2024-04-24 10:31:08,420 ERROR   StreamThr :5352 [internal.py:wandb_internal():152] Internal process shutdown.
+2024-04-24 10:31:08,659 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:31:08,659 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:31:08,659 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:31:08,820 ERROR   Thread-11 (_thread_body):5352 [step_upload.py:_handle_event():200] Failed to upload file: /var/folders/0t/wpjq3m9x0s39k2ngjkd8dqj80000gn/T/tmpeo8jvuos/wandb-job.json
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/connection.py", line 419, in connect
+    self.sock = ssl_wrap_socket(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 513, in wrap_socket
+    return self.sslsocket_class._create(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1104, in _create
+    self.do_handshake()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/ssl.py", line 1375, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2760, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2791, in upload_file
+    raise _e.with_traceback(sys.exc_info()[2])
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/internal/internal_api.py", line 2760, in upload_file
+    response = self._upload_file_session.put(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 649, in put
+    return self.request("PUT", url, data=data, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+wandb.sdk.lib.retry.TransientError: None
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 212, in wrapped_fn
+    return retrier(*args, **kargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 183, in __call__
+    wandb.termlog(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/errors/term.py", line 39, in termlog
+    _log(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/errors/term.py", line 95, in _log
+    click.echo(line, file=sys.stderr, nl=newline)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/click/utils.py", line 318, in echo
+    file.write(out)  # type: ignore
+OSError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/filesync/upload_job.py", line 69, in push
+    deduped = self.save_fn(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/artifacts/artifact_saver.py", line 175, in <lambda>
+    lambda entry, progress_callback: self._manifest.storage_policy.store_file_sync(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/artifacts/storage_policies/wandb_storage_policy.py", line 327, in store_file_sync
+    self.default_file_upload(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/artifacts/storage_policies/wandb_storage_policy.py", line 250, in default_file_upload
+    self._api.upload_file_retry(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/apis/normalize.py", line 87, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 212, in wrapped_fn
+    return retrier(*args, **kargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/retry.py", line 183, in __call__
+    wandb.termlog(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/errors/term.py", line 39, in termlog
+    _log(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/errors/term.py", line 95, in _log
+    click.echo(line, file=sys.stderr, nl=newline)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/click/utils.py", line 318, in echo
+    file.write(out)  # type: ignore
+wandb.errors.CommError: [Errno 5] Input/output error
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/filesync/step_upload.py", line 288, in run_and_notify
+    self._do_upload_sync(event)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/filesync/step_upload.py", line 330, in _do_upload_sync
+    job.run()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/filesync/upload_job.py", line 57, in run
+    self.push()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/filesync/upload_job.py", line 80, in push
+    wandb.termerror(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/errors/term.py", line 61, in termerror
+    _log(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/errors/term.py", line 95, in _log
+    click.echo(line, file=sys.stderr, nl=newline)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/click/utils.py", line 318, in echo
+    file.write(out)  # type: ignore
+OSError: [Errno 5] Input/output error
+2024-04-24 10:31:09,383 INFO    WriterThread:5352 [datastore.py:close():296] close: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_103027-14grspnl/run-14grspnl.wandb
+2024-04-24 10:31:09,384 INFO    HandlerThread:5352 [handler.py:finish():866] shutting down handler
+2024-04-24 10:31:47,844 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:31:47,845 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:31:47,845 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:33:07,011 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:33:07,012 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:33:07,012 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:35:28,906 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:35:28,906 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:35:28,906 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:39:51,052 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:39:51,053 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:39:51,053 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:44:59,306 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:44:59,306 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:44:59,306 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:50:43,207 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:50:43,207 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:50:43,207 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 10:56:55,764 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 10:56:55,765 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 10:56:55,765 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 11:02:16,904 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 11:02:16,905 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 11:02:16,905 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 
+2024-04-24 11:08:27,167 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2767] upload_file exception https://storage.googleapis.com/wandb-production.appspot.com/darren_qing/Moe_finetuning/14grspnl/wandb-metadata.json?Expires=1714012235&GoogleAccessId=gorilla-files-url-signer-man%40wandb-production.iam.gserviceaccount.com&Signature=djNl6YcGyvyBnccc4fvuPq0JlutOzDpdzowg3fl6cHuJtr1eGQjp0gSnlT8HNNAwAHVbQzYnSfS3c52pUb8LNGzoXamyBJn0s0uaPNnJlj2yZsfqUPLfg28hipIJcWOuDn3NB6WGeGYDVJwn2chJh25PHOnefflR49EP38Cv8dCogBkz5dwgaa8PHqQjhaa%2F1XHumu5wPxHvDTln%2BTJo3mC1X6blDtNNOH0NDhEX%2FZ1%2FGYRdOvhm0gAdjP6I%2FwaKFSymts3BEpNypFOfifLSrdBiY%2BJJaumZ0ZjCMkMCUxDbaMhHKL93ztCWrBAo4O%2FSPdnr90qCn9594Ur7cqtgtg%3D%3D: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+2024-04-24 11:08:27,167 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2769] upload_file request headers: {'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2449'}
+2024-04-24 11:08:27,167 ERROR   wandb-upload_0:5352 [internal_api.py:upload_file():2771] upload_file response body: 

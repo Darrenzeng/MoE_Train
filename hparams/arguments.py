@@ -203,8 +203,9 @@ class RetrieverTrainingArguments(TrainingArguments):
     sentence_pooling_method: str = field(default='cls', metadata={"help": "the pooling method, should be cls or mean"})
     normlized: bool = field(default=True)
     use_inbatch_neg: bool = field(default=True, metadata={"help": "use passages in the same batch as negatives"})
-    report_to: str = field(default="wandb", metadata={"help": "where to report the results"})
-    run_name: str = field(default="debug_moe1", metadata={"help": "wandb run name"})
+    #wandb的配置
+    report_to: str = field(default="None", metadata={"help": "where to report the results, wandb or None"})
+    run_name: str = field(default="debug_llama3", metadata={"help": "wandb run name"})
     #lora配置
     q_lora: Optional[bool] = field(default=False)
     use_lora: Optional[bool] = field(default=False)

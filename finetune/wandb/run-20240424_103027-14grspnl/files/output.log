@@ -1,0 +1,25 @@
+
+  0%|                                                                                                                                                                       | 0/6 [00:00<?, ?it/s]
+
+ 17%|██████████████████████████▌                                                                                                                                    | 1/6 [00:02<00:12,  2.43s/it]
+
+
+ 50%|███████████████████████████████████████████████████████████████████████████████▌                                                                               | 3/6 [00:11<00:10,  3.52s/it]
+ 50%|███████████████████████████████████████████████████████████████████████████████▌                                                                               | 3/6 [00:11<00:10,  3.52s/it]Traceback (most recent call last):
+  File "/Users/a58/Downloads/MoE_Train/finetune/run.py", line 194, in <module>
+    main()
+  File "/Users/a58/Downloads/MoE_Train/finetune/run.py", line 184, in main
+    trainer.train()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/trainer.py", line 1961, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/trainer.py", line 2911, in training_step
+    self.accelerator.backward(loss)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/accelerate/accelerator.py", line 1966, in backward
+    loss.backward(**kwargs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

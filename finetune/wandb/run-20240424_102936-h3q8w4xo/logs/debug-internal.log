@@ -1,0 +1,43 @@
+2024-04-24 10:29:36,036 INFO    StreamThr :5158 [internal.py:wandb_internal():86] W&B internal server running at pid: 5158, started at: 2024-04-24 10:29:36.034983
+2024-04-24 10:29:36,038 DEBUG   HandlerThread:5158 [handler.py:handle_request():146] handle_request: status
+2024-04-24 10:29:36,042 INFO    WriterThread:5158 [datastore.py:open_for_write():87] open: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_102936-h3q8w4xo/run-h3q8w4xo.wandb
+2024-04-24 10:29:36,043 DEBUG   SenderThread:5158 [sender.py:send():379] send: header
+2024-04-24 10:29:36,101 DEBUG   SenderThread:5158 [sender.py:send():379] send: run
+2024-04-24 10:29:36,818 INFO    SenderThread:5158 [dir_watcher.py:__init__():211] watching files in: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_102936-h3q8w4xo/files
+2024-04-24 10:29:36,820 INFO    SenderThread:5158 [sender.py:_start_run_threads():1124] run started: h3q8w4xo with start time 1713925776.035473
+2024-04-24 10:29:36,832 DEBUG   HandlerThread:5158 [handler.py:handle_request():146] handle_request: check_version
+2024-04-24 10:29:36,833 DEBUG   SenderThread:5158 [sender.py:send_request():406] send_request: check_version
+2024-04-24 10:29:37,304 DEBUG   HandlerThread:5158 [handler.py:handle_request():146] handle_request: run_start
+2024-04-24 10:29:37,317 DEBUG   HandlerThread:5158 [system_info.py:__init__():26] System info init
+2024-04-24 10:29:37,320 DEBUG   HandlerThread:5158 [system_info.py:__init__():41] System info init done
+2024-04-24 10:29:37,323 INFO    HandlerThread:5158 [system_monitor.py:start():194] Starting system monitor
+2024-04-24 10:29:37,328 INFO    HandlerThread:5158 [system_monitor.py:probe():214] Collecting system info
+2024-04-24 10:29:37,331 DEBUG   HandlerThread:5158 [system_info.py:probe():150] Probing system
+2024-04-24 10:29:37,335 INFO    SystemMonitor:5158 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-04-24 10:29:37,361 INFO    SystemMonitor:5158 [interfaces.py:start():190] Started cpu monitoring
+2024-04-24 10:29:37,364 DEBUG   HandlerThread:5158 [system_info.py:_probe_git():135] Probing git
+2024-04-24 10:29:37,365 INFO    SystemMonitor:5158 [interfaces.py:start():190] Started disk monitoring
+2024-04-24 10:29:37,367 INFO    SystemMonitor:5158 [interfaces.py:start():190] Started gpuapple monitoring
+2024-04-24 10:29:37,372 INFO    SystemMonitor:5158 [interfaces.py:start():190] Started memory monitoring
+2024-04-24 10:29:37,374 INFO    SystemMonitor:5158 [interfaces.py:start():190] Started network monitoring
+2024-04-24 10:29:37,457 DEBUG   HandlerThread:5158 [system_info.py:_probe_git():143] Probing git done
+2024-04-24 10:29:37,457 DEBUG   HandlerThread:5158 [system_info.py:probe():198] Probing system done
+2024-04-24 10:29:37,457 DEBUG   HandlerThread:5158 [system_monitor.py:probe():223] {'os': 'macOS-14.2.1-arm64-arm-64bit', 'python': '3.10.13', 'heartbeatAt': '2024-04-24T02:29:37.331658', 'startedAt': '2024-04-24T02:29:36.025765', 'docker': None, 'cuda': None, 'args': ('--model_name_or_path', '/Users/a58/Downloads/pretrain_model/Qwen/Qwen1.5-0.5B-Chat', '--do_train', 'True', '--per_device_train_batch_size', '1', '--gradient_accumulation_steps', '1', '--learning_rate', '5e-5', '--weight_decay', '0', '--max_grad_norm', '1.0', '--num_train_epochs', '1.0', '--block_size', '32', '--train_file', '/Users/a58/Downloads/my_test/data/data_sft/renting_data_train_7000_improved_prompting3.json', '--output_dir', '/Users/a58/Downloads/MoE_Train/outputs', '--overwrite_output_dir', '--logging_dir', '/Users/a58/Downloads/MoE_Train/outputs', '--save_strategy', 'epoch', '--save_total_limit', '1', '--logging_strategy', 'steps', '--logging_steps', '1', '--report_to', 'wandb', '--trust_remote_code', 'True', '--template', 'qwen', '--q_lora', 'False', '--use_lora', 'True', '--lora_r', '8', '--lora_alpha', '32', '--lora_dropout', '0.05', '--lora_target_modules', 'q_proj', 'v_proj', 'k_proj', 'o_proj', 'gate_proj', 'down_proj', 'up_proj'), 'state': 'running', 'program': '/Users/a58/Downloads/MoE_Train/finetune/run.py', 'codePathLocal': 'run.py', 'codePath': 'finetune/run.py', 'git': {'remote': 'https://github.com/Darrenzeng/MoE_Train.git', 'commit': '9ceba2fa16dcaae727b2916e6fcc8e3674ef1880'}, 'email': 'zengyufei@58.com', 'root': '/Users/a58/Downloads/MoE_Train', 'host': '58deMacBook-Pro-2.local', 'username': 'a58', 'executable': '/Users/a58/anaconda3/envs/llama_factory/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'disk': {'/': {'total': 228.27386474609375, 'used': 13.368824005126953}}, 'gpuapple': {'type': 'arm', 'vendor': 'Apple'}, 'memory': {'total': 16.0}}
+2024-04-24 10:29:37,458 INFO    HandlerThread:5158 [system_monitor.py:probe():224] Finished collecting system info
+2024-04-24 10:29:37,458 INFO    HandlerThread:5158 [system_monitor.py:probe():227] Publishing system info
+2024-04-24 10:29:37,458 DEBUG   HandlerThread:5158 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-04-24 10:29:37,830 INFO    Thread-17 :5158 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_102936-h3q8w4xo/files/conda-environment.yaml
+2024-04-24 10:29:41,368 INFO    cpu       :5158 [interfaces.py:monitor():140] Process cpu has exited.
+2024-04-24 10:29:41,369 DEBUG   SystemMonitor:5158 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-04-24 10:29:41,369 DEBUG   SystemMonitor:5158 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-04-24 10:29:41,369 DEBUG   SystemMonitor:5158 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-04-24 10:29:41,531 DEBUG   HandlerThread:5158 [system_info.py:_save_conda():222] Saving conda packages done
+2024-04-24 10:29:41,532 INFO    HandlerThread:5158 [system_monitor.py:probe():229] Finished publishing system info
+2024-04-24 10:29:41,535 DEBUG   HandlerThread:5158 [handler.py:handle_request():146] handle_request: status_report
+2024-04-24 10:29:41,536 DEBUG   SenderThread:5158 [sender.py:send():379] send: telemetry
+2024-04-24 10:29:41,536 DEBUG   SenderThread:5158 [sender.py:send():379] send: stats
+2024-04-24 10:29:41,536 DEBUG   SenderThread:5158 [sender.py:send():379] send: files
+2024-04-24 10:29:41,536 INFO    SenderThread:5158 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2024-04-24 10:29:41,844 INFO    Thread-17 :5158 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_102936-h3q8w4xo/files/conda-environment.yaml
+2024-04-24 10:29:41,845 INFO    Thread-17 :5158 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_102936-h3q8w4xo/files/wandb-metadata.json
+2024-04-24 10:29:42,090 INFO    MainThread:5158 [internal.py:handle_exit():76] Internal process exited
