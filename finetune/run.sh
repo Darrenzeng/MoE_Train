@@ -8,6 +8,7 @@ python /Users/a58/Downloads/MoE_Train/finetune/run.py \
     --max_grad_norm 1.0 \
     --num_train_epochs 1.0 \
     --block_size 32 \
+    --cutoff_len 230 \
     --train_file /Users/a58/Downloads/my_test/data/data_sft/renting_data_train_7000_improved_prompting3.json \
     --output_dir /Users/a58/Downloads/MoE_Train/outputs \
     --overwrite_output_dir \

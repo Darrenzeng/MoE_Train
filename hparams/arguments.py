@@ -113,6 +113,10 @@ class DataArguments:
     dataset_name: Optional[str] = field(
         default=None, metadata={"help": "The name of the dataset to use (via the datasets library)."}
     )
+    cutoff_len: int = field(
+        default=1024,
+        metadata={"help": "The cutoff length of the model inputs after tokenization."},
+    )
     dataset_config_name: Optional[str] = field(
         default=None, metadata={"help": "The configuration name of the dataset to use (via the datasets library)."}
     )

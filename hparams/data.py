@@ -48,6 +48,7 @@ class TrainDatasetForSft(Dataset):
         self.template = get_template_and_fix_tokenizer(self.tokenizer, name=self.args.template)
         self.dataset = self.dataset.map(self.process_fn, batched=True, batch_size=128, num_proc=1, remove_columns=self.dataset.column_names)  
         self.dataset = self.dataset.sort("input_length")
+        self.dataset = self.dataset.filter(lambda example: example["input_length"] < self.args.cutoff_len)
 
     def __len__(self):
         return self.total_len
