@@ -68,12 +68,6 @@ class TrainDatasetForSft(Dataset):
             result["output"].append(label)
             
         return result
-    
-    def data_sort(self, dataset):
-        lengths = [len(x) for x in dataset]
-        data_with_lengths = list(zip(dataset, lengths))
-        sorted_data = sorted(data_with_lengths, key=lambda x: x[1])
-        sorted_data_only = [x[0] for x in sorted_data]
         
     def __getitem__(self, item) -> Tuple[str, List[str]]:
         query = self.dataset[item]['instruction']
