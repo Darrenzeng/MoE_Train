@@ -45,7 +45,9 @@ class TrainDatasetForSft(Dataset):
         self.total_len = len(self.dataset)
         
         #提前处理好数据
-        self.dataset = self.dataset.map(self.process_fn, batched=True, batch_size=128, num_proc=1, remove_columns=self.dataset.column_names)    
+        self.template = get_template_and_fix_tokenizer(self.tokenizer, name=self.args.template)
+        self.dataset = self.dataset.map(self.process_fn, batched=True, batch_size=128, num_proc=1, remove_columns=self.dataset.column_names)  
+        self.dataset = self.dataset.sort("input_length")
 
     def __len__(self):
         return self.total_len
@@ -54,18 +56,24 @@ class TrainDatasetForSft(Dataset):
         """思路：如果是llama格式，则直接拼接instruction和input（包括qwen）
                 如果是gpt格式，以conversation对话形式存在
         """
-        template = get_template_and_fix_tokenizer(self.tokenizer, name=self.args.template)
-        result = {"instruction":[], "input":[], "output":[]}
+        result = {"instruction":[], "input":[], "output":[], "input_length":[]}
         for idx in range(len(example['input'])):
             query = example['instruction'][idx] + example['input'][idx]
             label = example['output'][idx]
             #需要调用模板，对query进行处理
-            query = add_prompt_form_template(template=template, query=query)
+            query = add_prompt_form_template(template=self.template, query=query)
             result["instruction"].append(query)
+            result["input_length"].append(len(query))
             result["input"].append("")
             result["output"].append(label)
             
         return result
+    
+    def data_sort(self, dataset):
+        lengths = [len(x) for x in dataset]
+        data_with_lengths = list(zip(dataset, lengths))
+        sorted_data = sorted(data_with_lengths, key=lambda x: x[1])
+        sorted_data_only = [x[0] for x in sorted_data]
         
     def __getitem__(self, item) -> Tuple[str, List[str]]:
         query = self.dataset[item]['instruction']

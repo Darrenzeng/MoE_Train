@@ -1,0 +1,36 @@
+2024-04-24 16:50:03,906 INFO    MainThread:35816 [wandb_setup.py:_flush():76] Current SDK version is 0.16.6
+2024-04-24 16:50:03,906 INFO    MainThread:35816 [wandb_setup.py:_flush():76] Configure stats pid to 35816
+2024-04-24 16:50:03,906 INFO    MainThread:35816 [wandb_setup.py:_flush():76] Loading settings from /Users/a58/.config/wandb/settings
+2024-04-24 16:50:03,906 INFO    MainThread:35816 [wandb_setup.py:_flush():76] Loading settings from /Users/a58/Downloads/MoE_Train/finetune/wandb/settings
+2024-04-24 16:50:03,906 INFO    MainThread:35816 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'project': 'Moe_finetuning'}
+2024-04-24 16:50:03,906 INFO    MainThread:35816 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-04-24 16:50:03,906 INFO    MainThread:35816 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'finetune/run.py', 'program_abspath': '/Users/a58/Downloads/MoE_Train/finetune/run.py', 'program': '/Users/a58/Downloads/MoE_Train/finetune/run.py'}
+2024-04-24 16:50:03,906 INFO    MainThread:35816 [wandb_setup.py:_flush():76] Applying login settings: {}
+2024-04-24 16:50:03,906 INFO    MainThread:35816 [wandb_init.py:_log_setup():521] Logging user logs to /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_165003-bl8yfm3u/logs/debug.log
+2024-04-24 16:50:03,906 INFO    MainThread:35816 [wandb_init.py:_log_setup():522] Logging internal logs to /Users/a58/Downloads/MoE_Train/finetune/wandb/run-20240424_165003-bl8yfm3u/logs/debug-internal.log
+2024-04-24 16:50:03,906 INFO    MainThread:35816 [wandb_init.py:init():561] calling init triggers
+2024-04-24 16:50:03,907 INFO    MainThread:35816 [wandb_init.py:init():568] wandb.init called with sweep_config: {}
+config: {}
+2024-04-24 16:50:03,907 INFO    MainThread:35816 [wandb_init.py:init():611] starting backend
+2024-04-24 16:50:03,907 INFO    MainThread:35816 [wandb_init.py:init():615] setting up manager
+2024-04-24 16:50:03,908 INFO    MainThread:35816 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2024-04-24 16:50:03,910 INFO    MainThread:35816 [wandb_init.py:init():623] backend started and connected
+2024-04-24 16:50:03,916 INFO    MainThread:35816 [wandb_init.py:init():715] updated telemetry
+2024-04-24 16:50:03,945 INFO    MainThread:35816 [wandb_init.py:init():748] communicating run to backend with 90.0 second timeout
+2024-04-24 16:50:04,430 WARNING MainThread:35816 [wandb_init.py:init():1203] interrupted
+Traceback (most recent call last):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1181, in init
+    run = wi.init()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 751, in init
+    result = run_init_handle.wait(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 283, in wait
+    found, abandoned = self._slot._get_and_clear(timeout=wait_timeout)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 130, in _get_and_clear
+    if self._wait(timeout=timeout):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 126, in _wait
+    return self._event.wait(timeout=timeout)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/threading.py", line 607, in wait
+    signaled = self._cond.wait(timeout)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

@@ -1,0 +1,25 @@
+  0%|                                                                                                                                                                       | 0/6 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/Users/a58/Downloads/MoE_Train/finetune/run.py", line 196, in <module>
+    main()
+  File "/Users/a58/Downloads/MoE_Train/finetune/run.py", line 186, in main
+    trainer.train()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/trainer.py", line 1624, in train
+    return inner_training_loop(
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/trainer.py", line 1961, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/transformers/trainer.py", line 2894, in training_step
+    model.train()
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2398, in train
+    module.train(mode)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2398, in train
+    module.train(mode)
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2398, in train
+    module.train(mode)
+  [Previous line repeated 1 more time]
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2396, in train
+    self.training = mode
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1707, in __setattr__
+    if isinstance(value, Parameter):
+  File "/Users/a58/anaconda3/envs/llama_factory/lib/python3.10/site-packages/torch/nn/parameter.py", line 8, in __instancecheck__
+    def __instancecheck__(self, instance):
+KeyboardInterrupt
