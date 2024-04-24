@@ -6,6 +6,7 @@ from formatter import EmptyFormatter, StringFormatter, Formatter
 
 @dataclass
 class Template:
+    name: str
     format_user: "Formatter"
     format_assistant: "Formatter"
     format_system: "Formatter"
@@ -42,6 +43,7 @@ def _register_template(
     default_assistant_formatter = StringFormatter(slots=["{{content}}"] + eos_slots)
     default_separator_formatter = EmptyFormatter()
     templates[name] = template_class(#每调用一次该方法，就在templates中加入了一个新的模板
+        name = name,
         format_user=format_user or default_user_formatter,
         format_assistant=format_assistant or default_assistant_formatter,
         format_system=format_system or default_user_formatter,
@@ -129,7 +131,10 @@ _register_template(
 )
 
 def add_prompt_form_template(template, query):
-    system_prompt = template.format_system.apply(content=template.default_system)[0]
+    if template.name == "llama3":
+        system_prompt = template.format_system.apply(content=template.default_system)[1]
+    else:
+        system_prompt = template.format_system.apply(content=template.default_system)[0]
     text = template.format_user.apply(content=query)[0]
 
     return system_prompt + text

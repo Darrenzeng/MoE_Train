@@ -45,7 +45,7 @@ class TrainDatasetForSft(Dataset):
         self.total_len = len(self.dataset)
         
         #提前处理好数据
-        self.dataset = self.dataset.map(self.process_fn, batched=True, batch_size=128, num_proc=4, remove_columns=self.dataset.column_names)    
+        self.dataset = self.dataset.map(self.process_fn, batched=True, batch_size=128, num_proc=1, remove_columns=self.dataset.column_names)    
 
     def __len__(self):
         return self.total_len
