@@ -2,15 +2,16 @@
 定制化构建qwen_moe架构，并实现训练和微调
 
 ## 普通模型转换为MoE架构
-从原始模型copy权重给moe架构的模型
+1. 从原始模型copy权重给moe架构的模型
 ```bash
-python mergekit-moe/mergit.py (需要将run.sh中的参数添加进去)
+$cd mergekit-moe
+sh run.sh
 ```
 或者
 ```bash
-sh run.sh
+python mergit.py (需要将run.sh中的参数添加进去)
 ```
-运行完成后，可以对moe模型进行测试
+2. 运行完成后，可以对moe模型进行测试
 ```bash
 python mergekit-moe/test_after_merge.py
 ```
